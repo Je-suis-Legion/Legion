@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public bool canMove = true;
     
     private Vector3 velocity;
     private CharacterController controller;
@@ -35,8 +36,11 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
-
+        if (canMove)
+        {
+            controller.Move(move * speed * Time.deltaTime);    
+        }
+        
         velocity.y += gravity * Time.deltaTime;
         
         controller.Move(velocity * Time.deltaTime);
