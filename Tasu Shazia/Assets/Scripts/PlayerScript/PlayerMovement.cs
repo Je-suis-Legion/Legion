@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                     hit.collider.gameObject.SetActive(false);
                 }
                 //a completer et tjrs le meme nom de fonction d'action
-                //hit.collider.gameObject.GetComponent<SCRIPTDACTION>().FONCTIONDACTION
+                hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
             }
         }
         

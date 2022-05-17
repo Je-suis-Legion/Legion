@@ -22,7 +22,7 @@ public class CompteurBoutons : MonoBehaviour
 
                     foreach (var j in listBoutons)
                     {
-                        j.GetComponent<BoutonsPoussoir>().Reset();
+                        j.GetComponent<Action>().Reset();
                     }
                     
                     listBoutons.Clear();
