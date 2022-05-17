@@ -31,6 +31,7 @@ public class PlayerYokai : MonoBehaviour
                 break;
             case Yokai.Vue:
                 gameObject.GetComponent<PlayerMovement>().etatJoueur = EtatJoueur.Vue;
+                gameObject.GetComponent<PlayerEffetVue>().ActiveEffetVue();
                 break;
         }
 
