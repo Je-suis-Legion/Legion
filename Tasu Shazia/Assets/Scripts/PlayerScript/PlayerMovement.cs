@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public EtatJoueur etatJoueur;
     public float speed = 12f;
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
