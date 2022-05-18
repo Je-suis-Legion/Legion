@@ -1,0 +1,19 @@
+{
+  "dialogues": 
+  [
+    {
+      "id": 0,
+      "name": "Nom1",
+      "color": "rouge",
+      "dialogue": "Premier dialogue coucou",
+      "path": "Musiquetest"
+    },
+    {
+      "id": 1,
+      "name": "penis",
+      "color": "jaune",
+      "dialogue": "blablacar",
+      "path": "Resources/audio"
+    }
+  ]
+}
