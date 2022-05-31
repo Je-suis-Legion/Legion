@@ -9,20 +9,29 @@ public class SoustitresVoices : MonoBehaviour
     public static Dialogues dialogues;
     public TextAsset json;
 
+    private AudioClip clip;
+    private float textDuration;
+
     void Start()
     {
         dialogues = JsonUtility.FromJson<Dialogues>(json.text);
-        SoustitreVoice(0,gameObject);
+        //SoustitreVoice(0,gameObject);
     }
 
     public void SoustitreVoice(int id, GameObject objetSonore)
     {
-        StartCoroutine(DefilementText(id, 0.2f));
+        clip = (AudioClip) Resources.Load(dialogues.dialogues[id].path);
+        textDuration = clip.length / dialogues.dialogues[id].dialogue.Length;
+        Debug.Log(textDuration);
+        if (dialogues.dialogues[id].path != "null")
+        {
+            objetSonore.GetComponent<AudioSource>().clip = clip;
+            objetSonore.GetComponent<AudioSource>().Play();
+        }
+        StartCoroutine(DefilementText(id, textDuration));
         gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[id].color);
         Debug.Log(dialogues.dialogues[id].path);
         Debug.Log(Resources.Load(dialogues.dialogues[id].path));
-        objetSonore.GetComponent<AudioSource>().clip = (AudioClip) Resources.Load(dialogues.dialogues[id].path);
-        objetSonore.GetComponent<AudioSource>().Play();
     }
 
     private Color tradColor(string color)
@@ -56,15 +65,15 @@ public class SoustitresVoices : MonoBehaviour
 
     private IEnumerator DefilementText(int id, float speed)
     {
-        for (int i = 0; i < dialogues.dialogues[id].name.Length; i++)
+        /*for (int i = 0; i < dialogues.dialogues[id].name.Length; i++)
         {
             gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name.Remove(i);
             yield return new WaitForSeconds(speed);
         }
         gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name;
-        yield return new WaitForSeconds(speed);
+        yield return new WaitForSeconds(speed);*/
         gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name + " : ";
-        yield return new WaitForSeconds(speed);
+        //yield return new WaitForSeconds(speed);
         
         for (int i = 0; i < dialogues.dialogues[id].dialogue.Length; i++)
         {
@@ -73,6 +82,8 @@ public class SoustitresVoices : MonoBehaviour
         }
         gameObject.GetComponent<TextMeshProUGUI>().text =
             dialogues.dialogues[id].name + " : " + dialogues.dialogues[id].dialogue;
+        yield return new WaitForSeconds(speed);
+        gameObject.GetComponent<TextMeshProUGUI>().text = "";
         
         yield return null;
     }
