@@ -28,6 +28,8 @@ public class SoustitresVoices : MonoBehaviour
             objetSonore.GetComponent<AudioSource>().clip = clip;
             objetSonore.GetComponent<AudioSource>().Play();
         }
+        //gestion des sous titres ou non dans les options ?
+        // <color=color.red> </color>
         StartCoroutine(DefilementText(id, textDuration));
         gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[id].color);
         Debug.Log(dialogues.dialogues[id].path);
