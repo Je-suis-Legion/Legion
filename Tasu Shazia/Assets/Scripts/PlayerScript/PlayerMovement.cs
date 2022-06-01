@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public bool canMove = true;
+    public bool canInteract = true;
     [SerializeField] public List<GameObject> listItem;
 
     private int layerMaskInteractable;
@@ -56,19 +57,24 @@ public class PlayerMovement : MonoBehaviour
         //Raycast pour l'interaction
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3, layerMaskInteractable))
         {
-            //afficher le msg d'interaction (coroutine pour un fade in fade out
-            //Debug.Log(hit.collider.gameObject.name);
-            
-            if (Input.GetKeyDown(KeyCode.E))
+            if (canInteract)
             {
-                Debug.Log("oui");
-                if (hit.collider.gameObject.tag == "Inventory")
+                //afficher le msg d'interaction en noir (coroutine pour un fade in fade out)
+                if (Input.GetKeyDown(KeyCode.E))
                 {
-                    listItem.Add(hit.collider.gameObject);
-                    hit.collider.gameObject.SetActive(false);
+                    Debug.Log("oui");
+                    if (hit.collider.gameObject.tag == "Inventory")
+                    {
+                        listItem.Add(hit.collider.gameObject);
+                        hit.collider.gameObject.SetActive(false);
+                    }
+                    //a completer et tjrs le meme nom de fonction d'action
+                    hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
                 }
-                //a completer et tjrs le meme nom de fonction d'action
-                hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
+            }
+            else
+            {
+                //afficher le msg d'interaction en gris (coroutine pour un fade in fade out)
             }
         }
         
