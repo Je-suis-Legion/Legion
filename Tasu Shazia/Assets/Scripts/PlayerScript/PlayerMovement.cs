@@ -17,9 +17,11 @@ public class PlayerMovement : MonoBehaviour
 
     private int layerMaskInteractable;
     private Vector3 velocity;
+    private Vector3 moveDirection;
     private CharacterController controller;
     private GameObject groundCheck;
     private bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
-
         if (canMove)
         {
             controller.Move(move * speed * Time.deltaTime);    
@@ -79,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
 }
 
 public enum EtatJoueur

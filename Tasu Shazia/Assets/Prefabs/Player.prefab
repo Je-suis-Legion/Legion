@@ -523,6 +523,55 @@ MonoBehaviour:
     m_Bits: 8
   canMove: 1
   canInteract: 1
+  playerInput:
+    m_Name: Player Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 84d931da-ff65-4204-8246-220fa2fef8c2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Move
+      m_Id: 4971fac5-99c6-4b04-a571-5a0e5e128c1c
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Input
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 1383691b-0960-4db4-9e82-72a240804163
+      m_Path: <Keyboard>/z
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Input
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 04edd2a3-fb61-47c4-9842-805f716a2392
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Input
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 1f415bad-3ede-4c7c-8a5d-5e4d6374e3b3
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Input
+      m_Flags: 8
+    - m_Name: right
+      m_Id: b54c03ad-4f73-4e5e-ba4b-5f2abf44b7e3
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Input
+      m_Flags: 8
+    m_Flags: 0
   listItem: []
 --- !u!114 &7561553223886671021
 MonoBehaviour:

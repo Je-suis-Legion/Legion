@@ -1903,6 +1903,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3246636392807498758, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4640700588080591349, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1923,6 +1927,14 @@ PrefabInstance:
       propertyPath: listObjetsVue.Array.data[0]
       value: 
       objectReference: {fileID: 2025171463}
+    - target: {fileID: 8125131079029338438, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
+      propertyPath: playerInput.m_Id
+      value: 549489bc-00ab-40ec-9c56-e2ee9090d4cb
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125131079029338438, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
+      propertyPath: playerInput.m_Name
+      value: Player Input
+      objectReference: {fileID: 0}
     - target: {fileID: 8125131079029338439, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1999,7 +2011,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3246636392807498758, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d92651be500fd0b42b3e24ec950dcfb1, type: 3}
 --- !u!1 &8125131079365070304 stripped
 GameObject:
