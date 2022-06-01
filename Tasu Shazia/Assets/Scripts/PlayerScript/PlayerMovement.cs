@@ -28,14 +28,45 @@ public class PlayerMovement : MonoBehaviour
         layerMaskInteractable = LayerMask.GetMask("Interactable");
         controller = gameObject.GetComponent<CharacterController>();
         groundCheck = transform.GetChild(2).gameObject;
+        etatJoueur = EtatJoueur.Normal;
+    }
+
+    private void Update()
+    {
+        RaycastHit hit;
+        Debug.DrawRay(Camera.main.transform.position,Camera.main.transform.forward * 3,Color.red);
+        
+        //Raycast pour l'interaction
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3, layerMaskInteractable))
+        {
+            if (canInteract)
+            {
+                //afficher le msg d'interaction en noir (coroutine pour un fade in fade out)
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("oui");
+                    if (hit.collider.gameObject.tag == "Inventory")
+                    {
+                        listItem.Add(hit.collider.gameObject);
+                        hit.collider.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        //a completer et tjrs le meme nom de fonction d'action
+                        hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
+                    }
+                }
+            }
+            else
+            {
+                //afficher le msg d'interaction en gris (coroutine pour un fade in fade out)
+            }
+        }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        RaycastHit hit;
-        Debug.DrawRay(Camera.main.transform.position,Camera.main.transform.forward * 3,Color.red);
-        
         //Simulation de la gravité
         isGrounded = Physics.CheckSphere(groundCheck.transform.position, groundDistance, groundMask);
 
@@ -54,33 +85,7 @@ public class PlayerMovement : MonoBehaviour
         {
             controller.Move(move * speed * Time.deltaTime);    
         }
-        
-        //Raycast pour l'interaction
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3, layerMaskInteractable))
-        {
-            if (canInteract)
-            {
-                //afficher le msg d'interaction en noir (coroutine pour un fade in fade out)
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Debug.Log("oui");
-                    if (hit.collider.gameObject.tag == "Inventory")
-                    {
-                        listItem.Add(hit.collider.gameObject);
-                        hit.collider.gameObject.SetActive(false);
-                    }
-                    //a completer et tjrs le meme nom de fonction d'action
-                    hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
-                }
-            }
-            else
-            {
-                //afficher le msg d'interaction en gris (coroutine pour un fade in fade out)
-            }
-        }
-        
     }
-
 }
 
 public enum EtatJoueur

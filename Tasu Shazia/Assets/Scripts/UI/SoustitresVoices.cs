@@ -11,6 +11,8 @@ public class SoustitresVoices : MonoBehaviour
 
     private AudioClip clip;
     private float textDuration;
+    private Color color;
+    private bool voicePlaying = false;
 
     void Start()
     {
@@ -29,7 +31,6 @@ public class SoustitresVoices : MonoBehaviour
             objetSonore.GetComponent<AudioSource>().Play();
         }
         //gestion des sous titres ou non dans les options ?
-        // <color=color.red> </color>
         StartCoroutine(DefilementText(id, textDuration));
         gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[id].color);
         Debug.Log(dialogues.dialogues[id].path);
@@ -60,6 +61,10 @@ public class SoustitresVoices : MonoBehaviour
                 break;
             case "jaune" : couleur = Color.yellow;
                 break;
+            case "violet" : couleur = new Color(148,0,211);
+                break;
+            case "orange" : couleur = new Color(255, 69, 0);
+                break;
         }
 
         return couleur;
@@ -84,7 +89,7 @@ public class SoustitresVoices : MonoBehaviour
         }
         gameObject.GetComponent<TextMeshProUGUI>().text =
             dialogues.dialogues[id].name + " : " + dialogues.dialogues[id].dialogue;
-        yield return new WaitForSeconds(speed);
+        yield return new WaitForSeconds(1);
         gameObject.GetComponent<TextMeshProUGUI>().text = "";
         
         yield return null;
