@@ -17,42 +17,24 @@ public class PlayerMovement : MonoBehaviour
 
     private int layerMaskInteractable;
     private Vector3 velocity;
+    private Vector3 moveDirection;
     private CharacterController controller;
     private GameObject groundCheck;
     private bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
         layerMaskInteractable = LayerMask.GetMask("Interactable");
         controller = gameObject.GetComponent<CharacterController>();
         groundCheck = transform.GetChild(2).gameObject;
+        etatJoueur = EtatJoueur.Normal;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
         RaycastHit hit;
         Debug.DrawRay(Camera.main.transform.position,Camera.main.transform.forward * 3,Color.red);
-        
-        //Simulation de la gravité
-        isGrounded = Physics.CheckSphere(groundCheck.transform.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-        
-        //Mouvements
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        if (canMove)
-        {
-            controller.Move(move * speed * Time.deltaTime);    
-        }
         
         //Raycast pour l'interaction
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3, layerMaskInteractable))
@@ -68,8 +50,11 @@ public class PlayerMovement : MonoBehaviour
                         listItem.Add(hit.collider.gameObject);
                         hit.collider.gameObject.SetActive(false);
                     }
-                    //a completer et tjrs le meme nom de fonction d'action
-                    hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
+                    else
+                    {
+                        //a completer et tjrs le meme nom de fonction d'action
+                        hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
+                    }
                 }
             }
             else
@@ -77,7 +62,29 @@ public class PlayerMovement : MonoBehaviour
                 //afficher le msg d'interaction en gris (coroutine pour un fade in fade out)
             }
         }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        //Simulation de la gravité
+        isGrounded = Physics.CheckSphere(groundCheck.transform.position, groundDistance, groundMask);
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
         
+        //Mouvements
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        Vector3 move = transform.right * x + transform.forward * z;
+        if (canMove)
+        {
+            controller.Move(move * speed * Time.deltaTime);    
+        }
     }
 }
 
