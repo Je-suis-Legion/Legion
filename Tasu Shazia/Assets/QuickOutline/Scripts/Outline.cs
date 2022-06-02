@@ -32,7 +32,6 @@ public class Outline : MonoBehaviour {
     }
   }
   
-  //[ColorUsage(true,true)]
   public Color OutlineColor {
     get { return outlineColor; }
     set {
@@ -58,6 +57,7 @@ public class Outline : MonoBehaviour {
   private Mode outlineMode;
 
   [SerializeField]
+  [ColorUsage(true,true)]
   private Color outlineColor = Color.white;
 
   [SerializeField, Range(0f, 10f)]

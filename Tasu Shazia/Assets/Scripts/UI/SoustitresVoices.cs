@@ -1,18 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SoustitresVoices : MonoBehaviour
 {
     public static Dialogues dialogues;
     public TextAsset json;
-
+    
+    [SerializeField]
+    private List<int> listLecture;
     private AudioClip clip;
     private float textDuration;
     private Color color;
-    private bool voicePlaying = false;
+    private bool isPlaying = false;
 
     void Start()
     {
@@ -20,21 +24,36 @@ public class SoustitresVoices : MonoBehaviour
         //SoustitreVoice(0,gameObject);
     }
 
-    public void SoustitreVoice(int id, GameObject objetSonore)
+    public void ajoutList(int id)
     {
-        clip = (AudioClip) Resources.Load(dialogues.dialogues[id].path);
-        textDuration = clip.length / dialogues.dialogues[id].dialogue.Length;
-        Debug.Log(textDuration);
-        if (dialogues.dialogues[id].path != "null")
+        int idTemp = id;
+        listLecture.Add(dialogues.dialogues[id].id);
+
+        if (dialogues.dialogues[idTemp].continuer)
         {
-            objetSonore.GetComponent<AudioSource>().clip = clip;
-            objetSonore.GetComponent<AudioSource>().Play();
+            ajoutList(id + 1);
         }
-        //gestion des sous titres ou non dans les options ?
-        StartCoroutine(DefilementText(id, textDuration));
-        gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[id].color);
-        Debug.Log(dialogues.dialogues[id].path);
-        Debug.Log(Resources.Load(dialogues.dialogues[id].path));
+    }
+
+    public IEnumerator SoustitreVoice(int id, GameObject objetSonore)
+    {
+        if (!isPlaying)
+        {
+            isPlaying = true;
+            clip = (AudioClip) Resources.Load(dialogues.dialogues[listLecture[0]].path);
+            textDuration = clip.length / dialogues.dialogues[listLecture[0]].dialogue.Length;
+            
+            if (dialogues.dialogues[listLecture[0]].path != "null")
+            {
+                objetSonore.GetComponent<AudioSource>().clip = clip;
+                objetSonore.GetComponent<AudioSource>().Play();
+            }
+            //gestion des sous titres ou non dans les options ?
+            gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[id].color);
+            StartCoroutine(DefilementText(listLecture[0], textDuration, objetSonore));
+
+            yield return null;
+        }
     }
 
     private Color tradColor(string color)
@@ -70,18 +89,10 @@ public class SoustitresVoices : MonoBehaviour
         return couleur;
     }
 
-    private IEnumerator DefilementText(int id, float speed)
+    private IEnumerator DefilementText(int id, float speed, GameObject objetSonore)
     {
-        /*for (int i = 0; i < dialogues.dialogues[id].name.Length; i++)
-        {
-            gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name.Remove(i);
-            yield return new WaitForSeconds(speed);
-        }
-        gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name;
-        yield return new WaitForSeconds(speed);*/
         gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name + " : ";
-        //yield return new WaitForSeconds(speed);
-        
+
         for (int i = 0; i < dialogues.dialogues[id].dialogue.Length; i++)
         {
             gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[id].name + " : " + dialogues.dialogues[id].dialogue.Remove(i);
@@ -91,6 +102,12 @@ public class SoustitresVoices : MonoBehaviour
             dialogues.dialogues[id].name + " : " + dialogues.dialogues[id].dialogue;
         yield return new WaitForSeconds(1);
         gameObject.GetComponent<TextMeshProUGUI>().text = "";
+        isPlaying = false;
+        listLecture.Remove(listLecture[0]);
+        if (listLecture.Any())
+        {
+            StartCoroutine(SoustitreVoice(listLecture[0], objetSonore));
+        }
         
         yield return null;
     }

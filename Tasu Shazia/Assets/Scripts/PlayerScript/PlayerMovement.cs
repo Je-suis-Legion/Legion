@@ -41,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canInteract)
             {
-                //afficher le msg d'interaction en noir (coroutine pour un fade in fade out)
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("oui");
@@ -56,10 +55,6 @@ public class PlayerMovement : MonoBehaviour
                         hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
                     }
                 }
-            }
-            else
-            {
-                //afficher le msg d'interaction en gris (coroutine pour un fade in fade out)
             }
         }
     }

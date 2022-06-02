@@ -23,6 +23,8 @@ public class TriggerText : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        zoneText.GetComponent<SoustitresVoices>().SoustitreVoice(idText,originSonore);
+        zoneText.GetComponent<SoustitresVoices>().ajoutList(idText);
+        StartCoroutine(zoneText.GetComponent<SoustitresVoices>().SoustitreVoice(idText,originSonore));
+        Destroy(gameObject);
     }
 }
