@@ -6,14 +6,16 @@
       "name": "Le dev",
       "color": "bleu",
       "dialogue": "Y a rien d'enregistré, rien du tout.",
-      "path": "test/Riendenregistrer"
+      "path": "test/Riendenregistrer",
+      "continuer" : true
     },
     {
       "id": 1,
       "name": "Le dev",
       "color": "jaune",
       "dialogue": "Toujours pas hein, y a toujours rien d'enregistré",
-      "path": "test/Toujoursrien"
+      "path": "test/Toujoursrien",
+      "continuer" : false
     }
   ]
 }

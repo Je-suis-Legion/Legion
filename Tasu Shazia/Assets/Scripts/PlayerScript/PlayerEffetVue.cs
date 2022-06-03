@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -26,21 +27,23 @@ public class PlayerEffetVue : MonoBehaviour
     {
         foreach (var i in listObjetsVue)
         {
-            i.SetActive(true);
+            i.gameObject.GetComponent<Outline>().enabled = true;
         }
         //Peut etre un peu brusque donc voir avec coroutine pour plus smooth
         audioManager.SetFloat("frequenceEffetInGame", freqVue);
         audioManager.SetFloat("frequenceMusiqueInGame", freqVue);
+        audioManager.SetFloat("frequenceDialoguesInGame", freqVue);
     }
     
     public void DesactiveEffetVue()
     {
         foreach (var i in listObjetsVue)
         {
-            i.SetActive(false);
+            i.gameObject.GetComponent<Outline>().enabled = false;
         }
         //Peut etre un peu brusque donc voir avec coroutine pour plus smooth
         audioManager.SetFloat("frequenceEffetInGame", freqOrigin);
         audioManager.SetFloat("frequenceMusiqueInGame", freqOrigin);
+        audioManager.SetFloat("frequenceDialoguesInGame", freqOrigin);
     }
 }
