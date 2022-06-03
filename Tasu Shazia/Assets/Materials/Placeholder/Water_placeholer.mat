@@ -115,7 +115,7 @@ Material:
     - _ZWrite: 1
     - transparency_world: 0
     m_Colors:
-    - BaseColor: {r: 0, g: 0.41638985, b: 0.5660378, a: 0.9490196}
+    - BaseColor: {r: 0, g: 0.41638982, b: 0.5660378, a: 0.8156863}
     - Foam_color: {r: 0.7180936, g: 0.9339623, b: 0.9339622, a: 1}
     - Normal_Speed: {r: 0, g: 0, b: 0, a: 0}
     - Voronoi_Colr: {r: 0.24679601, g: 0.6131096, b: 0.8867924, a: 0}
