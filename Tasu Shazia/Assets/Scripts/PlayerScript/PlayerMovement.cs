@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
+    public float distanceInteractions = 3;
     public LayerMask groundMask;
     public bool canMove = true;
     public bool canInteract = true;
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.DrawRay(Camera.main.transform.position,Camera.main.transform.forward * 3,Color.red);
         
         //Raycast pour l'interaction
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 3, layerMaskInteractable))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distanceInteractions, layerMaskInteractable))
         {
             if (canInteract)
             {
