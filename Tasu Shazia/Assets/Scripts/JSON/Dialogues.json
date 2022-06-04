@@ -3,17 +3,19 @@
   [
     {
       "id": 0,
-      "name": "Nom1",
-      "color": "rouge",
-      "dialogue": "Premier dialogue coucou",
-      "path": "Musiquetest"
+      "name": "Le dev",
+      "color": "bleu",
+      "dialogue": "Y a rien d'enregistré, rien du tout.",
+      "path": "test/Riendenregistrer",
+      "continuer" : true
     },
     {
       "id": 1,
-      "name": "penis",
+      "name": "Le dev",
       "color": "jaune",
-      "dialogue": "blablacar",
-      "path": "Resources/audio"
+      "dialogue": "Toujours pas hein, y a toujours rien d'enregistré",
+      "path": "test/Toujoursrien",
+      "continuer" : false
     }
   ]
 }

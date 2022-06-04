@@ -18,4 +18,5 @@ public struct TextDialogues
     public string color;
     public string dialogue;
     public string path;
+    public bool continuer;
 }
