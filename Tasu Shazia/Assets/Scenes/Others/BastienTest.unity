@@ -1506,6 +1506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1091036962}
   zoomSpeed: 10
+  listSameEffectObject:
+  - {fileID: 1816979617}
+  - {fileID: 1518206947}
 --- !u!1 &1569271064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,6 +1834,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1091036962}
   zoomSpeed: 10
+  listSameEffectObject:
+  - {fileID: 1816979617}
+  - {fileID: 1518206947}
 --- !u!1001 &1865636927
 PrefabInstance:
   m_ObjectHideFlags: 0
