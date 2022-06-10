@@ -1,41 +1,46 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CompteurBoutons : MonoBehaviour
 {
-    [SerializeField] private int nbBoutons;
-    private int count = 0;
-    
-    [SerializeField] public List<GameObject> solutionBouton;
-    public List<GameObject> listBoutons;
+    public List<GameObject> listBoutton;
+    public List<int> combinaisonCadenas;
+    public List<int> codeCadenas;
+    public int codeGauche;
+    public int codeCentre;
+    public int codeDroite;
+
+    private int compteur;
+
+    private void OnEnable()
+    {
+        combinaisonCadenas.Add(codeGauche);
+        combinaisonCadenas.Add(codeCentre);
+        combinaisonCadenas.Add(codeDroite);
+    }
 
     public void CheckList()
     {
-        if (listBoutons.Count == nbBoutons)
+        compteur = 0;
+
+        for (int i = 0; i < codeCadenas.Count; i++)
         {
-            foreach (var i in listBoutons)
+            if (codeCadenas[i] == combinaisonCadenas[i])
             {
-                if (i != solutionBouton[listBoutons.IndexOf(i)].gameObject)
-                {
-                    count = 0;
-
-                    foreach (var j in listBoutons)
-                    {
-                        j.GetComponent<Action>().Reset();
-                    }
-                    
-                    listBoutons.Clear();
-                    break;
-                }
-
-                count++;
+                compteur++;
             }
+        }
 
-            if (count == nbBoutons)
+        if (compteur == 3)
+        {
+            foreach (var i in listBoutton)
             {
-                Destroy(gameObject);
+                i.GetComponent<Action>().isInteractible = false;
             }
+            Destroy(gameObject);
+            //animation de la chute du cadenas
         }
     }
 }

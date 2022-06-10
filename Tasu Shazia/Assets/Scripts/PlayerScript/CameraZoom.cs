@@ -35,7 +35,7 @@ public class CameraZoom : MonoBehaviour
                     new LensSettings(mainCameraSettings.FieldOfView - zoomSpeed * Time.deltaTime,
                         mainCameraSettings.OrthographicSize,mainCameraSettings.NearClipPlane,
                         mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
-                Debug.Log(mainCameraSettings.FieldOfView);
+                //Debug.Log(mainCameraSettings.FieldOfView);
             }
         }
         else
@@ -47,7 +47,7 @@ public class CameraZoom : MonoBehaviour
                     new LensSettings(mainCameraSettings.FieldOfView + zoomSpeed * Time.deltaTime,
                         mainCameraSettings.OrthographicSize,mainCameraSettings.NearClipPlane,
                         mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
-                Debug.Log(mainCameraSettings.FieldOfView);
+                //Debug.Log(mainCameraSettings.FieldOfView);
             }
         }
     }

@@ -323,7 +323,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7784201, y: 1}
+    m_SensorSize: {x: 2.4867618, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -459,6 +459,7 @@ GameObject:
   - component: {fileID: 8125131079029338438}
   - component: {fileID: 7561553223886671021}
   - component: {fileID: 7561553223886671020}
+  - component: {fileID: 7689617210537368559}
   - component: {fileID: 5855532496643985328}
   m_Layer: 0
   m_Name: Player
@@ -519,6 +520,7 @@ MonoBehaviour:
   speed: 12
   gravity: -19.62
   groundDistance: 0.4
+  distanceInteractions: 3
   groundMask:
     serializedVersion: 2
     m_Bits: 8
@@ -552,6 +554,18 @@ MonoBehaviour:
   listObjetsVue:
   - {fileID: 0}
   audioManager: {fileID: 24100000, guid: d19c52a26b3a907439138f25733db12e, type: 2}
+--- !u!114 &7689617210537368559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8125131079029338441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5014a7d051680944af36ac505299d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &5855532496643985328
 AudioSource:
   m_ObjectHideFlags: 0
