@@ -103,6 +103,7 @@ public class SoustitresVoices : MonoBehaviour
         yield return new WaitForSeconds(1);
         gameObject.GetComponent<TextMeshProUGUI>().text = "";
         isPlaying = false;
+        GameObject.Find("Player").GetComponent<TextFinish>().Action(dialogues.dialogues[id].id);
         listLecture.Remove(listLecture[0]);
         if (listLecture.Any())
         {

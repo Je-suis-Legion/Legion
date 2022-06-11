@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("oui");
+                    //Debug.Log("oui");
                     if (hit.collider.gameObject.tag == "Inventory")
                     {
                         listItem.Add(hit.collider.gameObject);
