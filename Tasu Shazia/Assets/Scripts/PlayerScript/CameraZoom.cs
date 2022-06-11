@@ -9,11 +9,15 @@ public class CameraZoom : MonoBehaviour
 {
     public GameObject player;
     public float zoomSpeed = 10;
+
+    [SerializeField]
+    private List<GameObject> listSameEffectObject;
     
     private float fovMin = 20;
     private float fovMax = 60;
     private bool isVisble;
     private LensSettings mainCameraSettings;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +35,7 @@ public class CameraZoom : MonoBehaviour
                     new LensSettings(mainCameraSettings.FieldOfView - zoomSpeed * Time.deltaTime,
                         mainCameraSettings.OrthographicSize,mainCameraSettings.NearClipPlane,
                         mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
-                Debug.Log(mainCameraSettings.FieldOfView);
+                //Debug.Log(mainCameraSettings.FieldOfView);
             }
         }
         else
@@ -43,7 +47,7 @@ public class CameraZoom : MonoBehaviour
                     new LensSettings(mainCameraSettings.FieldOfView + zoomSpeed * Time.deltaTime,
                         mainCameraSettings.OrthographicSize,mainCameraSettings.NearClipPlane,
                         mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
-                Debug.Log(mainCameraSettings.FieldOfView);
+                //Debug.Log(mainCameraSettings.FieldOfView);
             }
         }
     }
@@ -51,10 +55,24 @@ public class CameraZoom : MonoBehaviour
     private void OnBecameVisible()
     {
         isVisble = true;
+        foreach (var i in listSameEffectObject)
+        {
+            if (i != gameObject)
+            {
+                i.GetComponent<CameraZoom>().enabled = false;
+            }
+        }
     }
 
     private void OnBecameInvisible()
     {
         isVisble = false;
+        foreach (var i in listSameEffectObject)
+        {
+            if (i != gameObject)
+            {
+                i.GetComponent<CameraZoom>().enabled = true;
+            }
+        }
     }
 }
