@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1058828387584467439}
   - component: {fileID: 1058828387584467438}
   m_Layer: 0
-  m_Name: Id93 (Trigger traces de pas)
+  m_Name: Id101 (Trigger traces de pas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 93
+  idText: 101
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828387584467438
@@ -190,7 +190,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058828388936869294}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1058828387763163407
 BoxCollider:
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 1058828387858733978}
   - component: {fileID: 1058828387858733957}
   m_Layer: 0
-  m_Name: Id103 (Trigger du clocher)
+  m_Name: Id111 (Trigger du clocher)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,7 +348,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058828388936869294}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1058828387858733979
 BoxCollider:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 103
+  idText: 111
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828387858733957
@@ -487,7 +487,7 @@ GameObject:
   - component: {fileID: 1058828387883206959}
   - component: {fileID: 1058828387883206958}
   m_Layer: 0
-  m_Name: Id84 (Ruines nord post statue)
+  m_Name: Id92 (Ruines nord post statue)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 84
+  idText: 92
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828387883206958
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 1058828387925905652}
   - component: {fileID: 1058828387925905655}
   m_Layer: 0
-  m_Name: Id67 (Premier passage chemin nord ou sud)
+  m_Name: Id75 (Premier passage chemin nord ou sud)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 67
+  idText: 75
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828387925905655
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 1058828387945615575}
   - component: {fileID: 1058828387945615574}
   m_Layer: 0
-  m_Name: Id59 (Statue)
+  m_Name: Id67 (Statue)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 59
+  idText: 67
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828387945615574
@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 1058828387976321742}
   - component: {fileID: 1058828387976321737}
   m_Layer: 0
-  m_Name: "Id55 (Ruines \xE0 gauche du spawn)"
+  m_Name: "Id63 (Ruines \xE0 gauche du spawn)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 55
+  idText: 63
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828387976321737
@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 1058828388276541149}
   - component: {fileID: 1058828388276541148}
   m_Layer: 0
-  m_Name: Id114 (Premier passag centre village)
+  m_Name: Id122 (Premier passag centre village)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058828388936869294}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1058828388276541138
 BoxCollider:
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 114
+  idText: 122
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828388276541148
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 1058828388278352604}
   - component: {fileID: 1058828388278352607}
   m_Layer: 0
-  m_Name: Id58 (Impasse en haut de la map 2)
+  m_Name: Id66 (Impasse en haut de la map 2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 58
+  idText: 66
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828388278352607
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 1058828388290702092}
   - component: {fileID: 1058828388290702095}
   m_Layer: 0
-  m_Name: Id57 (Impasse en haut de la map)
+  m_Name: Id65 (Impasse en haut de la map)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 57
+  idText: 65
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828388290702095
@@ -1607,7 +1607,7 @@ GameObject:
   - component: {fileID: 1058828388390109205}
   - component: {fileID: 1058828388390109204}
   m_Layer: 0
-  m_Name: "Id46 (Premi\xE8re vue clef chien)"
+  m_Name: "Id54 (Premi\xE8re vue clef chien)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 46
+  idText: 54
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828388390109204
@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 1058828388694099027}
   - component: {fileID: 1058828388694099026}
   m_Layer: 0
-  m_Name: Id112 (Passage entre maison NO et NE)
+  m_Name: Id120 (Passage entre maison NO et NE)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1784,7 +1784,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058828388936869294}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1058828388694099024
 BoxCollider:
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 112
+  idText: 120
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828388694099026
@@ -1923,7 +1923,7 @@ GameObject:
   - component: {fileID: 1058828388786363257}
   - component: {fileID: 1058828388786363256}
   m_Layer: 0
-  m_Name: Id31 (Marmitte)
+  m_Name: Id39 (Marmitte)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1969,7 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 31
+  idText: 39
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828388786363256
@@ -2107,6 +2107,7 @@ Transform:
   - {fileID: 1058828389090255900}
   - {fileID: 1058828387883206953}
   - {fileID: 1058828387584467433}
+  - {fileID: 8941248003554910834}
   - {fileID: 1058828389415941624}
   - {fileID: 1058828389503907305}
   - {fileID: 1058828387763163400}
@@ -2129,7 +2130,7 @@ GameObject:
   - component: {fileID: 1058828389090255890}
   - component: {fileID: 1058828389090255901}
   m_Layer: 0
-  m_Name: Id74 (Premier passage vers la porte zone 2)
+  m_Name: Id82 (Premier passage vers la porte zone 2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2175,7 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 74
+  idText: 82
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828389090255901
@@ -2287,7 +2288,7 @@ GameObject:
   - component: {fileID: 1058828389415941630}
   - component: {fileID: 1058828389415941625}
   m_Layer: 0
-  m_Name: Id96 (Trigger chemin random)
+  m_Name: Id104 (Trigger chemin random)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2306,7 +2307,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058828388936869294}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1058828389415941631
 BoxCollider:
@@ -2333,7 +2334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 96
+  idText: 104
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828389415941625
@@ -2445,7 +2446,7 @@ GameObject:
   - component: {fileID: 1058828389503907311}
   - component: {fileID: 1058828389503907310}
   m_Layer: 0
-  m_Name: Id98 (Trigger chemin random 2)
+  m_Name: Id106 (Trigger chemin random 2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2464,7 +2465,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1058828388936869294}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1058828389503907308
 BoxCollider:
@@ -2491,7 +2492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 98
+  idText: 106
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &1058828389503907310
@@ -2501,6 +2502,164 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058828389503907304}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1201667604977765963, guid: d19c52a26b3a907439138f25733db12e, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &5152697788570046338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8941248003554910834}
+  - component: {fileID: 7719435886162257011}
+  - component: {fileID: 6076470484639039868}
+  - component: {fileID: 8742139390332717840}
+  m_Layer: 0
+  m_Name: Id103 (Trigger traces de pas 2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8941248003554910834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152697788570046338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1058828388936869294}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7719435886162257011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152697788570046338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6076470484639039868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152697788570046338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idText: 103
+  originSonore: {fileID: 0}
+  zoneText: {fileID: 0}
+--- !u!82 &8742139390332717840
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152697788570046338}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1201667604977765963, guid: d19c52a26b3a907439138f25733db12e, type: 2}
@@ -2603,7 +2762,7 @@ GameObject:
   - component: {fileID: 6464679329173862550}
   - component: {fileID: 8893753647022524556}
   m_Layer: 0
-  m_Name: Id26 (Explo sortie cellule)
+  m_Name: Id34 (Explo sortie cellule)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16284d7cb1d1aee4f8f4b1bc6844c2bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idText: 26
+  idText: 34
   originSonore: {fileID: 0}
   zoneText: {fileID: 0}
 --- !u!82 &8893753647022524556
