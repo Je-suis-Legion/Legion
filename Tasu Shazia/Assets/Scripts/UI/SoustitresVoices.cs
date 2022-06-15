@@ -26,12 +26,26 @@ public class SoustitresVoices : MonoBehaviour
 
     public void ajoutList(int id)
     {
-        int idTemp = id;
-        listLecture.Add(dialogues.dialogues[id].id);
+        if (!listLecture.Contains(dialogues.dialogues[id].id))
+        {
+            int idTemp = id;
+            listLecture.Add(dialogues.dialogues[id].id);
 
+            if (dialogues.dialogues[idTemp].continuer)
+            {
+                ajoutList(id + 1);
+            }
+        }
+    }
+
+    public void removeList()
+    {
+        int idTemp = listLecture[0];
+        listLecture.Remove(listLecture[0]);
+        
         if (dialogues.dialogues[idTemp].continuer)
         {
-            ajoutList(id + 1);
+            removeList();
         }
     }
 
@@ -48,8 +62,7 @@ public class SoustitresVoices : MonoBehaviour
                 objetSonore.GetComponent<AudioSource>().clip = clip;
                 objetSonore.GetComponent<AudioSource>().Play();
             }
-            //gestion des sous titres ou non dans les options ?
-            gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[id].color);
+            gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[listLecture[0]].color);
             StartCoroutine(DefilementText(listLecture[0], textDuration, objetSonore));
 
             yield return null;
