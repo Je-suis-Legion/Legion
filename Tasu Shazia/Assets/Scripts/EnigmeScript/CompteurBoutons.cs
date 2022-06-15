@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class CompteurBoutons : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject zoneDialogue;
+    
     public List<GameObject> listBoutton;
     public List<int> combinaisonCadenas;
     public List<int> codeCadenas;
+    public List<GameObject> listCameraZoom;
     public int codeGauche;
     public int codeCentre;
     public int codeDroite;
@@ -39,8 +43,19 @@ public class CompteurBoutons : MonoBehaviour
             {
                 i.GetComponent<Action>().isInteractible = false;
             }
+            zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(99);
+            zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(99, player);
+            foreach (var i in listCameraZoom)
+            {
+                i.GetComponent<CameraZoom>().enabled = false;
+            }
             Destroy(gameObject);
-            //animation de la chute du cadenas
+            //animation de la chute du cadenas + ouverture de la porte
+        }
+        else
+        {
+            zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(98);
+            zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(98, player);
         }
     }
 }
