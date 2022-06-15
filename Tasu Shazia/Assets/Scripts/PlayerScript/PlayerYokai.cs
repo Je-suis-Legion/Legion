@@ -19,8 +19,6 @@ public class PlayerYokai : MonoBehaviour
 
     public void SwitchYokai(Yokai yokai, GameObject mask)
     {
-        //code de spawn ou activation du masque + mouvement (rotation et translation)
-        //une fois fini
         switch (yokai)
         {
             case Yokai.Odorat:
@@ -31,7 +29,6 @@ public class PlayerYokai : MonoBehaviour
                 break;
             case Yokai.Vue:
                 gameObject.GetComponent<PlayerMovement>().etatJoueur = EtatJoueur.Vue;
-                gameObject.GetComponent<PlayerEffetVue>().ActiveEffetVue();
                 break;
         }
 
