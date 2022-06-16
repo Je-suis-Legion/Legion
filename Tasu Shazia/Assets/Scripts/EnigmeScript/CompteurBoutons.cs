@@ -6,7 +6,9 @@ using UnityEngine;
 public class CompteurBoutons : MonoBehaviour
 {
     public GameObject player;
+    public GameObject porte;
     public GameObject zoneDialogue;
+    public GameObject allTextEnviro;
     
     public List<GameObject> listBoutton;
     public List<int> combinaisonCadenas;
@@ -28,6 +30,11 @@ public class CompteurBoutons : MonoBehaviour
     public void CheckList()
     {
         compteur = 0;
+        
+        foreach (var i in listBoutton)
+        {
+            i.GetComponent<Action>().isInteractible = false;
+        }
 
         for (int i = 0; i < codeCadenas.Count; i++)
         {
@@ -44,7 +51,10 @@ public class CompteurBoutons : MonoBehaviour
                 i.GetComponent<Action>().isInteractible = false;
             }
             zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(99);
-            zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(99, player);
+            StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(99, player));
+            allTextEnviro.transform.GetChild(93).gameObject.SetActive(true);
+            //Effet sonore de clique ? (deverouillage)
+            porte.GetComponent<Action>().goodCode = true;
             foreach (var i in listCameraZoom)
             {
                 i.GetComponent<CameraZoom>().enabled = false;
@@ -52,10 +62,10 @@ public class CompteurBoutons : MonoBehaviour
             Destroy(gameObject);
             //animation de la chute du cadenas + ouverture de la porte
         }
-        else
+        
+        foreach (var i in listBoutton)
         {
-            zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(98);
-            zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(98, player);
+            i.GetComponent<Action>().isInteractible = true;
         }
     }
 }

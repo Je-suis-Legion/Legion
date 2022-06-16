@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         controller = gameObject.GetComponent<CharacterController>();
         groundCheck = transform.GetChild(2).gameObject;
         etatJoueur = EtatJoueur.Normal;
-        defaultSprite = canvasJoueur.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite;
+        defaultSprite = canvasJoueur.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite;
     }
 
     private void Update()
@@ -51,19 +51,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyUp(KeyCode.Mouse0))
                 {
                     hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
                 }
 
-                canvasJoueur.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = interactSprite;
-                canvasJoueur.transform.GetChild(0).GetChild(1).localScale = new Vector3(0.25f,0.25f,0.25f);
+                canvasJoueur.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = interactSprite;
+                canvasJoueur.transform.GetChild(0).GetChild(2).localScale = new Vector3(0.25f,0.25f,0.25f);
             }
         }
         else
         {
-            canvasJoueur.transform.GetChild(0).GetChild(1).GetComponent<Image>().sprite = defaultSprite;
-            canvasJoueur.transform.GetChild(0).GetChild(1).localScale = new Vector3(0.02f,0.02f,0.02f);
+            canvasJoueur.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = defaultSprite;
+            canvasJoueur.transform.GetChild(0).GetChild(2).localScale = new Vector3(0.02f,0.02f,0.02f);
         }
     }
 
