@@ -40,12 +40,18 @@ public class SoustitresVoices : MonoBehaviour
 
     public void removeList()
     {
-        int idTemp = listLecture[0];
-        listLecture.Remove(listLecture[0]);
-        
-        if (dialogues.dialogues[idTemp].continuer)
+        if (listLecture.Count != 0)
         {
-            removeList();
+            int idTemp = listLecture[0];
+            //Tester son fonctionnement
+            StopAllCoroutines();
+            //
+            listLecture.Remove(listLecture[0]);
+        
+            if (dialogues.dialogues[idTemp].continuer)
+            {
+                removeList();
+            }
         }
     }
 
