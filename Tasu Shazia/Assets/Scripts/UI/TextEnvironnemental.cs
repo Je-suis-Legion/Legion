@@ -12,24 +12,24 @@ public class TextEnvironnemental : MonoBehaviour
     
     private Color color;
 
+    private void Awake()
+    {
+        dialogues = JsonUtility.FromJson<Dialogues>(json.text);
+        gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[idText].color);
+        gameObject.GetComponent<TextMeshProUGUI>().text = dialogues.dialogues[idText].dialogue;
+    }
+
     private void OnEnable()
     {
         StartCoroutine(Fade(false));
     }
 
-    private void OnDisable()
+    public void Disable()
     {
         StartCoroutine(Fade(true));
+        gameObject.SetActive(false);
     }
 
-    void Start()
-    {
-        dialogues = JsonUtility.FromJson<Dialogues>(json.text);
-        gameObject.GetComponent<TextMeshPro>().color = tradColor(dialogues.dialogues[idText].color);
-        gameObject.GetComponent<TextMeshPro>().text =
-            dialogues.dialogues[idText].name + " : " + dialogues.dialogues[idText].dialogue;
-    }
-    
     private Color tradColor(string color)
     {
         Color couleur = Color.black;
@@ -72,7 +72,7 @@ public class TextEnvironnemental : MonoBehaviour
             for (float i = 1; i >= 0; i -= Time.deltaTime)
             {
                 // set color with i as alpha
-                gameObject.GetComponent<TextMeshPro>().color = new Color(gameObject.GetComponent<TextMeshPro>().color.r, gameObject.GetComponent<TextMeshPro>().color.g, gameObject.GetComponent<TextMeshPro>().color.b, i);
+                gameObject.GetComponent<TextMeshProUGUI>().color = new Color(gameObject.GetComponent<TextMeshProUGUI>().color.r, gameObject.GetComponent<TextMeshProUGUI>().color.g, gameObject.GetComponent<TextMeshProUGUI>().color.b, i);
                 yield return null;
             }
         }
@@ -83,7 +83,7 @@ public class TextEnvironnemental : MonoBehaviour
             for (float i = 0; i <= 1; i += Time.deltaTime)
             {
                 // set color with i as alpha
-                gameObject.GetComponent<TextMeshPro>().color = new Color(gameObject.GetComponent<TextMeshPro>().color.r, gameObject.GetComponent<TextMeshPro>().color.g, gameObject.GetComponent<TextMeshPro>().color.b, i);
+                gameObject.GetComponent<TextMeshProUGUI>().color = new Color(gameObject.GetComponent<TextMeshProUGUI>().color.r, gameObject.GetComponent<TextMeshProUGUI>().color.g, gameObject.GetComponent<TextMeshProUGUI>().color.b, i);
                 yield return null;
             }
         }

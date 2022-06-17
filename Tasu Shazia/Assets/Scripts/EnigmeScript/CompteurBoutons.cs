@@ -54,12 +54,17 @@ public class CompteurBoutons : MonoBehaviour
             StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(99, player));
             allTextEnviro.transform.GetChild(93).gameObject.SetActive(true);
             //Effet sonore de clique ? (deverouillage)
-            porte.GetComponent<Action>().goodCode = true;
+            
+            //porte.GetComponent<Action>().goodCode = true;
+            Destroy(porte);
+            
             foreach (var i in listCameraZoom)
             {
                 i.GetComponent<CameraZoom>().enabled = false;
             }
-            Destroy(gameObject);
+            gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            gameObject.GetComponent<Animator>().SetBool("Fall", true);
+            //Destroy(gameObject);
             //animation de la chute du cadenas + ouverture de la porte
         }
         

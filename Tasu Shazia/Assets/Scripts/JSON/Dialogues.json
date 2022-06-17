@@ -3,18 +3,1298 @@
   [
     {
       "id": 0,
-      "name": "Le dev",
-      "color": "bleu",
-      "dialogue": "Y a rien d'enregistré, rien du tout.",
-      "path": "test/Riendenregistrer",
+      "name": "Narrateur",
+      "color": "cyan",
+      "dialogue": "Il est dit qu'il existe de rares humains avec des affinités spirituelles.",
+      "path": "placeholder/0",
       "continuer" : true
     },
     {
       "id": 1,
-      "name": "Le dev",
+      "name": "Narrateur",
+      "color": "cyan",
+      "dialogue": "Dans la plupart des cas, ils deviennent exorcistes ou bien hôtes de démons.",
+      "path": "placeholder/1",
+      "continuer" : true
+    },
+    {
+      "id": 2,
+      "name": "Narrateur",
+      "color": "cyan",
+      "dialogue": "Cependant, il est aussi fait mention d'un humain, à l'âme la plus pure, capable de recueillir autant d'entités que les Enfers peuvent en compter.",
+      "path": "placeholder/2",
+      "continuer" : true
+    },
+    {
+      "id": 3,
+      "name": "Narrateur",
+      "color": "cyan",
+      "dialogue": "Il est dit que son interprétation du monde ainsi que sa capacité à appréhender ses démons marquera l'Histoire.",
+      "path": "placeholder/3",
+      "continuer" : true
+    },
+    {
+      "id": 4,
+      "name": "Narrateur",
+      "color": "cyan",
+      "dialogue": "Cependant, une ombre plane sur cet élu.",
+      "path": "placeholder/4",
+      "continuer" : true
+    },
+    {
+      "id": 5,
+      "name": "Narrateur",
+      "color": "cyan",
+      "dialogue": "Celle d'un cercle froid et oppressant ne voyant pas d'un bon œil son existance.",
+      "path": "placeholder/5",
+      "continuer" : false
+    },
+    {
+      "id": 6,
+      "name": "Garde 1",
       "color": "jaune",
-      "dialogue": "Toujours pas hein, y a toujours rien d'enregistré",
-      "path": "test/Toujoursrien",
+      "dialogue": "Gabriel, le \"Purificateur\" demande toute l'aide disponible.",
+      "path": "placeholder/6",
+      "continuer" : true
+    },
+    {
+      "id": 7,
+      "name": "Garde 1",
+      "color": "jaune",
+      "dialogue": "L'exorcisme de Leraje se passe mal et plusieurs d'entre nous ont été blessés.",
+      "path": "placeholder/7",
+      "continuer" : true
+    },
+    {
+      "id": 8,
+      "name": "Garde 2",
+      "color": "orange",
+      "dialogue": "Je suis chargé de surveiller ce \"réceptacle\".",
+      "path": "placeholder/8",
+      "continuer" : true
+    },
+    {
+      "id": 9,
+      "name": "Garde 1",
+      "color": "jaune",
+      "dialogue": "Les ordres du \"Purificateur\" prévalent.",
+      "path": "placeholder/9",
+      "continuer" : true
+    },
+    {
+      "id": 10,
+      "name": "Garde 1",
+      "color": "jaune",
+      "dialogue": "De plus, son hôte semble encore affecté par le rosaire.",
+      "path": "placeholder/10",
+      "continuer" : true
+    },
+    {
+      "id": 11,
+      "name": "Garde 1",
+      "color": "jaune",
+      "dialogue": "Il ne pourra pas sortir d'ici.",
+      "path": "placeholder/11",
+      "continuer" : true
+    },
+    {
+      "id": 12,
+      "name": "Garde 2",
+      "color": "orange",
+      "dialogue": "Très bien, je te suis.",
+      "path": "placeholder/12",
+      "continuer" : false
+    },
+    {
+      "id": 13,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Eh ! Eh ! Oh !",
+      "path": "placeholder/13",
+      "continuer" : true
+    },
+    {
+      "id": 14,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Reprends tes esprits gamin !",
+      "path": "placeholder/14",
+      "continuer" : false
+    },
+    {
+      "id": 15,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Le garde l'avait cogné bien fort, rien d'étonnant à ce qu'il soit sonné.",
+      "path": "placeholder/15",
+      "continuer" : true
+    },
+    {
+      "id": 16,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Quelle indignité, s'il ne se reprend pas nous sommes cuits !",
+      "path": "placeholder/16",
+      "continuer" : true
+    },
+    {
+      "id": 17,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Regardez-moi cette tête d'ahuri.",
+      "path": "placeholder/17",
+      "continuer" : true
+    },
+    {
+      "id": 18,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Il a l'air de rien y comprendre.",
+      "path": "placeholder/18",
+      "continuer" : true
+    },
+    {
+      "id": 19,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Rien d'étonnant, la plupart des humains ne connaissent pas notre existence.",
+      "path": "placeholder/19",
+      "continuer" : true
+    },
+    {
+      "id": 20,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Après tout, les sciences occultes ne sont pas bien étudiées de nos jours.",
+      "path": "placeholder/20",
+      "continuer" : true
+    },
+    {
+      "id": 21,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": " Un petit résumé s'impose.",
+      "path": "placeholder/21",
+      "continuer" : true
+    },
+    {
+      "id": 22,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Sache que tu as une grande affinité spirituelle,",
+      "path": "placeholder/22",
+      "continuer" : true
+    },
+    {
+      "id": 23,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "ce qui de facto nous a attiré à toi mais nous a aussi coincé en toi.",
+      "path": "placeholder/23",
+      "continuer" : true
+    },
+    {
+      "id": 24,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Nous sommes des habitants de l'Enfer, que vous appelez \"démons\", \"djinn\" ou encore \"yokai\".",
+      "path": "placeholder/24",
+      "continuer" : true
+    },
+    {
+      "id": 25,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Je ne sais pas combien nous sommes en toi mais j'arrive à sentir au moins 5 de mes confrères.",
+      "path": "placeholder/25",
+      "continuer" : true
+    },
+    {
+      "id": 26,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Celui qui t'a réveillé, Andras; Alocer qui adore les effets dramatiques et moi-même, le grand Barbatos.",
+      "path": "placeholder/26",
+      "continuer" : true
+    },
+    {
+      "id": 27,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Les 2 autres je ne sais pas, nous verrons bien quand ils auront repris leurs esprits si je peux dire.",
+      "path": "placeholder/27",
+      "continuer" : true
+    },
+    {
+      "id": 28,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "On pourrait continuer les explications une fois dehors ?",
+      "path": "placeholder/28",
+      "continuer" : true
+    },
+    {
+      "id": 29,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Faut qu'on parte si on veut pas se faire exorciser.",
+      "path": "placeholder/29",
+      "continuer" : true
+    },
+    {
+      "id": 30,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Dépêchons avant que les fous du Cercle de Gaap ne reviennent !",
+      "path": "placeholder/30",
+      "continuer" : true
+    },
+    {
+      "id": 31,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Cette porte est très âgée, essaie de voir pour enlever ses gonds.",
+      "path": "placeholder/31",
+      "continuer" : false
+    },
+    {
+      "id": 32,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Parfait !",
+      "path": "placeholder/32",
+      "continuer" : true
+    },
+    {
+      "id": 33,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Trouvons un moyen de partir de cet endroit.",
+      "path": "placeholder/33",
+      "continuer" : false
+    },
+    {
+      "id": 34,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Je reprends mon explication du coup.",
+      "path": "placeholder/34",
+      "continuer" : true
+    },
+    {
+      "id": 35,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Nous sommes coincés avec toi et personnellement je compte bien rester.",
+      "path": "placeholder/35",
+      "continuer" : true
+    },
+    {
+      "id": 36,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Pour interagir avec votre monde, il nous faut une ancre.",
+      "path": "placeholder/36",
+      "continuer" : true
+    },
+    {
+      "id": 37,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Et tu en es une excellente avec toute cette énergie.",
+      "path": "placeholder/37",
+      "continuer" : true
+    },
+    {
+      "id": 38,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Je ne vais pas développer mais j'ai des projets.",
+      "path": "placeholder/38",
+      "continuer" : false
+    },
+    {
+      "id": 39,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Tiens, cette odeur…",
+      "path": "placeholder/39",
+      "continuer" : true
+    },
+    {
+      "id": 40,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Un ragoût de rongeurs, quelle nostalgie.",
+      "path": "placeholder/40",
+      "continuer" : true
+    },
+    {
+      "id": 41,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Je mangeais ça avec mon précédent hôte. Rien de tel que ce repas quand on a pas un sou.",
+      "path": "placeholder/41",
+      "continuer" : true
+    },
+    {
+      "id": 42,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Ah ! Ah ! J'ai pris le contrôle du corps !",
+      "path": "placeholder/42",
+      "continuer" : true
+    },
+    {
+      "id": 43,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Oh mon prince ! Andras a le contrôle.",
+      "path": "placeholder/43",
+      "continuer" : true
+    },
+    {
+      "id": 44,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Ce n'est pas plus mal, profitons de sa possession tant qu'il en a l'énergie.",
+      "path": "placeholder/44",
+      "continuer" : true
+    },
+    {
+      "id": 45,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Il serait interessant que tu te serves de ton odorat pour trouver une sortie.",
+      "path": "placeholder/45",
+      "continuer" : true
+    },
+    {
+      "id": 46,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Bien sûr, plus vite on est parti, mieux je me porterai.",
+      "path": "placeholder/46",
+      "continuer" : false
+    },
+    {
+      "id": 47,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "On pourrait fuir par là !",
+      "path": "placeholder/47",
+      "continuer" : true
+    },
+    {
+      "id": 48,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Mais la porte est fermée.",
+      "path": "placeholder/48",
+      "continuer" : true
+    },
+    {
+      "id": 49,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Elle est bien rouillée, la clef doit l'être aussi.",
+      "path": "placeholder/49",
+      "continuer" : true
+    },
+    {
+      "id": 50,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Voyons où cette odeur de rouille va nous mener.",
+      "path": "placeholder/50",
+      "continuer" : false
+    },
+    {
+      "id": 51,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Cette barre devrait nous être utile.",
+      "path": "placeholder/51",
+      "continuer" : true
+    },
+    {
+      "id": 52,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Quelle tristesse, elle n'est pas bien solide.",
+      "path": "placeholder/52",
+      "continuer" : true
+    },
+    {
+      "id": 53,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Sa seule utilité serait d'être une perche.",
+      "path": "placeholder/53",
+      "continuer" : false
+    },
+    {
+      "id": 54,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Cette clef doit être notre porte de sortie.",
+      "path": "placeholder/54",
+      "continuer" : true
+    },
+    {
+      "id": 55,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Mais elle est gardée, il nous faudrait quelque chose pour l'attraper d'ici.",
+      "path": "placeholder/55",
+      "continuer" : false
+    },
+    {
+      "id": 56,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Parfait, on va pouvoir ouvrir cette porte.",
+      "path": "placeholder/56",
+      "continuer" : false
+    },
+    {
+      "id": 57,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Si je suis cette odeur de rouille, je devrais trouver la clef.",
+      "path": "placeholder/57",
+      "continuer" : false
+    },
+    {
+      "id": 58,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Quelle situation desesperée, n'allons-nous rien trouver pour ouvrir cette porte ?",
+      "path": "placeholder/58",
+      "continuer" : false
+    },
+    {
+      "id": 59,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "C'est ouvert !",
+      "path": "placeholder/59",
+      "continuer" : true
+    },
+    {
+      "id": 60,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Fuyons ! Je sens des regards !",
+      "path": "placeholder/60",
+      "continuer" : false
+    },
+    {
+      "id": 61,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Tu sens rien du tout t'es paranoïaque !",
+      "path": "placeholder/61",
+      "continuer" : false
+    },
+    {
+      "id": 62,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Cuisiné dans une marmite rouillée, y a que ça de vrai.",
+      "path": "placeholder/62",
+      "continuer" : false
+    },
+    {
+      "id": 63,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Ces fous du Cercle pourraient au moins entretenir leur base.",
+      "path": "placeholder/63",
+      "continuer" : true
+    },
+    {
+      "id": 64,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Ils ne sont plus sensibles à rien, alors à l'esthétisme…",
+      "path": "placeholder/64",
+      "continuer" : false
+    },
+    {
+      "id": 65,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Il n'y a rien d'interessant ici.",
+      "path": "placeholder/65",
+      "continuer" : false
+    },
+    {
+      "id": 66,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "C'est une impasse.",
+      "path": "placeholder/66",
+      "continuer" : false
+    },
+    {
+      "id": 67,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Quel chef d'œuvre !",
+      "path": "placeholder/67",
+      "continuer" : true
+    },
+    {
+      "id": 68,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Je peux plus bouger.",
+      "path": "placeholder/68",
+      "continuer" : true
+    },
+    {
+      "id": 69,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Une telle prestance, un tel charisme !",
+      "path": "placeholder/69",
+      "continuer" : true
+    },
+    {
+      "id": 70,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Cette statue rend honneur à ma personne !",
+      "path": "placeholder/70",
+      "continuer" : true
+    },
+    {
+      "id": 71,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Super, le narcissique a le contrôle…",
+      "path": "placeholder/71",
+      "continuer" : true
+    },
+    {
+      "id": 72,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Quelle situation catastrophique !",
+      "path": "placeholder/72",
+      "continuer" : true
+    },
+    {
+      "id": 73,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Que nenni !",
+      "path": "placeholder/73",
+      "continuer" : true
+    },
+    {
+      "id": 74,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Ma vision nous sortira de cette région peu fréquentable.",
+      "path": "placeholder/74",
+      "continuer" : false
+    },
+    {
+      "id": 75,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Cet endroit me rappelle Karovan.",
+      "path": "placeholder/75",
+      "continuer" : true
+    },
+    {
+      "id": 76,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Oh pauvre Karovan, assailli par une horde de barbares.",
+      "path": "placeholder/76",
+      "continuer" : true
+    },
+    {
+      "id": 77,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Officiellement il s'agissait de fous avides de pillages,",
+      "path": "placeholder/77",
+      "continuer" : true
+    },
+    {
+      "id": 78,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "mais il s'agissait d'ores et déjà du Cercle.",
+      "path": "placeholder/78",
+      "continuer" : true
+    },
+    {
+      "id": 79,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Dans l'ombre, ils dispersent leur venin.",
+      "path": "placeholder/79",
+      "continuer" : true
+    },
+    {
+      "id": 80,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Pour n'attraper qu'un moins que rien.",
+      "path": "placeholder/80",
+      "continuer" : true
+    },
+    {
+      "id": 81,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Parle mieux ! C'était moi leur cible à l'époque !",
+      "path": "placeholder/81",
+      "continuer" : false
+    },
+    {
+      "id": 82,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Trompette) Il me tarde d'entendre le doux son de ce clocher.",
+      "path": "placeholder/82",
+      "continuer" : true
+    },
+    {
+      "id": 83,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Tiens donc, voici Amdusias.",
+      "path": "placeholder/83",
+      "continuer" : true
+    },
+    {
+      "id": 84,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Tambours) Le simple fait de l'imaginer me remplit déjà de joie.",
+      "path": "placeholder/84",
+      "continuer" : true
+    },
+    {
+      "id": 85,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Toujours aussi bruyant…",
+      "path": "placeholder/85",
+      "continuer" : true
+    },
+    {
+      "id": 86,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Banjo) Il s'agit là de ma manière de m'annoncer.",
+      "path": "placeholder/86",
+      "continuer" : false
+    },
+    {
+      "id": 87,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Encore une porte, et bloquée par un cadenas à code en plus.",
+      "path": "placeholder/87",
+      "continuer" : true
+    },
+    {
+      "id": 88,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Jamais nous ne réussirons à le trouver !",
+      "path": "placeholder/88",
+      "continuer" : true
+    },
+    {
+      "id": 89,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Bien sûr que si !",
+      "path": "placeholder/89",
+      "continuer" : true
+    },
+    {
+      "id": 90,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Il nous suffit de nous fier à ma vision !",
+      "path": "placeholder/90",
+      "continuer" : true
+    },
+    {
+      "id": 91,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Il y a peut-être un morceau de code dans le coin.",
+      "path": "placeholder/91",
+      "continuer" : false
+    },
+    {
+      "id": 92,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Les traces menent ici.",
+      "path": "placeholder/92",
+      "continuer" : true
+    },
+    {
+      "id": 93,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Symbales) Cherchons un code dans le coin.",
+      "path": "placeholder/93",
+      "continuer" : false
+    },
+    {
+      "id": 94,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Inspectons l'endroit, on trouvera peut-être quelque chose.",
+      "path": "placeholder/94",
+      "continuer" : false
+    },
+    {
+      "id": 95,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Ocarina) Voilà un symbole.",
+      "path": "placeholder/95",
+      "continuer" : false
+    },
+    {
+      "id": 96,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Une composante du code !",
+      "path": "placeholder/96",
+      "continuer" : false
+    },
+    {
+      "id": 97,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Un morceau du code !",
+      "path": "placeholder/97",
+      "continuer" : false
+    },
+    {
+      "id": 98,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Trouvons d'abord ce code.",
+      "path": "placeholder/98",
+      "continuer" : false
+    },
+    {
+      "id": 99,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Excellent, nous allons pouvoir continuer !",
+      "path": "placeholder/99",
+      "continuer" : true
+    },
+    {
+      "id": 100,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Clarinette) On se rapproche du clocher.",
+      "path": "placeholder/100",
+      "continuer" : false
+    },
+    {
+      "id": 101,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Des traces de pas.",
+      "path": "placeholder/101",
+      "continuer" : true
+    },
+    {
+      "id": 102,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Elles nous permettront peut-être de trouver le code.",
+      "path": "placeholder/102",
+      "continuer" : false
+    },
+    {
+      "id": 103,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Claquettes) D'autres traces.",
+      "path": "placeholder/103",
+      "continuer" : false
+    },
+    {
+      "id": 104,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Faudrait se dépêcher.",
+      "path": "placeholder/104",
+      "continuer" : true
+    },
+    {
+      "id": 105,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Je fais aussi vite que possible.",
+      "path": "placeholder/105",
+      "continuer" : false
+    },
+    {
+      "id": 106,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Le Cercle risque de nous rattraper à ce rythme.",
+      "path": "placeholder/106",
+      "continuer" : true
+    },
+    {
+      "id": 107,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "C'est dramatique !",
+      "path": "placeholder/107",
+      "continuer" : true
+    },
+    {
+      "id": 108,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "C'est Dame Leraje qu'ils affrontent, avec de la chance, elle s'en occupera pour nous.",
+      "path": "placeholder/108",
+      "continuer" : true
+    },
+    {
+      "id": 109,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Mais ce n'est pas une raison pour traîner.",
+      "path": "placeholder/109",
+      "continuer" : false
+    },
+    {
+      "id": 110,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Ces sentiers sont bien longs.",
+      "path": "placeholder/110",
+      "continuer" : false
+    },
+    {
+      "id": 111,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Cloche) Ahhh ! Quel doux son que celui d'une cloche.",
+      "path": "placeholder/111",
+      "continuer" : true
+    },
+    {
+      "id": 112,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "Saviez-vous qu'il existe plusieurs types de cloches pour diverses occasions ?",
+      "path": "placeholder/112",
+      "continuer" : true
+    },
+    {
+      "id": 113,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Ah, diantre. J'ai perdu le contrôle.",
+      "path": "placeholder/113",
+      "continuer" : true
+    },
+    {
+      "id": 114,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Hâtons-nous ou le Cercle sonnera notre glas.",
+      "path": "placeholder/114",
+      "continuer" : true
+    },
+    {
+      "id": 115,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Ce village semble habité.",
+      "path": "placeholder/115",
+      "continuer" : true
+    },
+    {
+      "id": 116,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Profitons de ta bonne ouïe pour écouter aux portes, Amdusias.",
+      "path": "placeholder/116",
+      "continuer" : true
+    },
+    {
+      "id": 117,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "Ça ne servira à rien.",
+      "path": "placeholder/117",
+      "continuer" : true
+    },
+    {
+      "id": 118,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Le dernier était donc Furfur.",
+      "path": "placeholder/118",
+      "continuer" : true
+    },
+    {
+      "id": 119,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Flûte de pan) Ne prêtons pas attention à ses mensonges.",
+      "path": "placeholder/119",
+      "continuer" : false
+    },
+    {
+      "id": 120,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "J'ai l'infime impression de ressentir d'autres énergies.",
+      "path": "placeholder/120",
+      "continuer" : true
+    },
+    {
+      "id": 121,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Luth) Moi aussi, nous sommes probablement plus de 5 à avoir été attirés.",
+      "path": "placeholder/121",
+      "continuer" : false
+    },
+    {
+      "id": 122,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Xylophone) Ce village ne tiendra pas longtemps.",
+      "path": "placeholder/122",
+      "continuer" : true
+    },
+    {
+      "id": 123,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "Bien sûr qu'il tiendra.",
+      "path": "placeholder/123",
+      "continuer" : true
+    },
+    {
+      "id": 124,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Harpe) Avec Gaap pas loin, ses habitants deviendront petit à petit des coquilles vides.",
+      "path": "placeholder/124",
+      "continuer" : false
+    },
+    {
+      "id": 125,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "Je crois bien que Gaspard habite à l'ouest du village.",
+      "path": "placeholder/125",
+      "continuer" : true
+    },
+    {
+      "id": 126,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "L'ouest c'est à l'opposé de l'église.",
+      "path": "placeholder/126",
+      "continuer" : true
+    },
+    {
+      "id": 127,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "Tu penses qu'on devrait partir avec lui ?",
+      "path": "placeholder/127",
+      "continuer" : true
+    },
+    {
+      "id": 128,
+      "name": "Personne 3",
+      "color": "noir",
+      "dialogue": "Moi je ne sais pas mais si on veut partir, faudrait déjà aller le voir.",
+      "path": "placeholder/128",
+      "continuer" : false
+    },
+    {
+      "id": 129,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "Gaspard est prêt à partir, faut se décider.",
+      "path": "placeholder/129",
+      "continuer" : true
+    },
+    {
+      "id": 130,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "Partir mais pour aller où ?",
+      "path": "placeholder/130",
+      "continuer" : true
+    },
+    {
+      "id": 131,
+      "name": "Personne 3",
+      "color": "noir",
+      "dialogue": "Déjà à l'ouest du village pour y rejoindre Gaspard.",
+      "path": "placeholder/131",
+      "continuer" : true
+    },
+    {
+      "id": 132,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "L'ouest c'est de ce coté de la maison.",
+      "path": "placeholder/132",
+      "continuer" : false
+    },
+    {
+      "id": 133,
+      "name": "Gaspard",
+      "color": "gris",
+      "dialogue": "Je finis de rassembler mes affaires et nous partirons avec ma charrette.",
+      "path": "placeholder/133",
+      "continuer" : true
+    },
+    {
+      "id": 134,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "Ils partiront à pied.",
+      "path": "placeholder/134",
+      "continuer" : true
+    },
+    {
+      "id": 135,
+      "name": "Gaspard",
+      "color": "gris",
+      "dialogue": "Pas de soucis.",
+      "path": "placeholder/135",
+      "continuer" : false
+    },
+    {
+      "id": 136,
+      "name": "Gaspard",
+      "color": "gris",
+      "dialogue": "J'attends encore quelqu'un.",
+      "path": "placeholder/136",
+      "continuer" : true
+    },
+    {
+      "id": 137,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "Nous partirons comment ?",
+      "path": "placeholder/137",
+      "continuer" : true
+    },
+    {
+      "id": 138,
+      "name": "Gaspard",
+      "color": "gris",
+      "dialogue": "En charrette.",
+      "path": "placeholder/138",
+      "continuer" : true
+    },
+    {
+      "id": 139,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "Sans charrette.",
+      "path": "placeholder/139",
+      "continuer" : false
+    },
+    {
+      "id": 140,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "Pourquoi y-a-t-il une charrette devant chez nous ?",
+      "path": "placeholder/140",
+      "continuer" : true
+    },
+    {
+      "id": 141,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "C'est Gaspard qui l'a garée là l'autre jour.",
+      "path": "placeholder/141",
+      "continuer" : true
+    },
+    {
+      "id": 142,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "C'est Gérard qui s'est mal garé.",
+      "path": "placeholder/142",
+      "continuer" : false
+    },
+    {
+      "id": 143,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "Gaspard abuse…",
+      "path": "placeholder/143",
+      "continuer" : true
+    },
+    {
+      "id": 144,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "Pourquoi ça ?",
+      "path": "placeholder/144",
+      "continuer" : true
+    },
+    {
+      "id": 145,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "Il s'est garé juste devant.",
+      "path": "placeholder/145",
+      "continuer" : true
+    },
+    {
+      "id": 146,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "Il s'est garé super loin.",
+      "path": "placeholder/146",
+      "continuer" : false
+    },
+    {
+      "id": 147,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "J'ai entendu dire que cette secte qui s'est installée dans l'ancien village faisait des sacrifices.",
+      "path": "placeholder/147",
+      "continuer" : true
+    },
+    {
+      "id": 148,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "L'endroit devient de plus en plus dangereux.",
+      "path": "placeholder/148",
+      "continuer" : false
+    },
+    {
+      "id": 149,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "Mon canard a disparu, je suis sûr que c'est un coup de ces fous à l'autre bout du village.",
+      "path": "placeholder/149",
+      "continuer" : false
+    },
+    {
+      "id": 150,
+      "name": "Personne 1",
+      "color": "gris",
+      "dialogue": "J'étais allé voir ces gens à l'autre bout du village mais quand je me suis approché j'ai entendu crier.",
+      "path": "placeholder/150",
+      "continuer" : true
+    },
+    {
+      "id": 151,
+      "name": "Personne 2",
+      "color": "blanc",
+      "dialogue": "On devrait partir, si ça se trouve ce sont des brigands.",
+      "path": "placeholder/151",
+      "continuer" : false
+    },
+    {
+      "id": 152,
+      "name": "Furfur",
+      "color": "rose",
+      "dialogue": "Cette information est inutile.",
+      "path": "placeholder/152",
+      "continuer" : false
+    },
+    {
+      "id": 153,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Clavecin) Prenons-en note.",
+      "path": "placeholder/153",
+      "continuer" : false
+    },
+    {
+      "id": 154,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Quelle perte de temps.",
+      "path": "placeholder/154",
+      "continuer" : false
+    },
+    {
+      "id": 155,
+      "name": "Alocer",
+      "color": "rouge",
+      "dialogue": "Ohhh, il n'existe pas plus inutile.",
+      "path": "placeholder/155",
+      "continuer" : false
+    },
+    {
+      "id": 156,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Orgue) Ce doit être ici.",
+      "path": "placeholder/156",
+      "continuer" : true
+    },
+    {
+      "id": 157,
+      "name": "Andras",
+      "color": "violet",
+      "dialogue": "Cachons-nous dedans, ce Gaspard ne nous connaît pas.",
+      "path": "placeholder/157",
+      "continuer" : true
+    },
+    {
+      "id": 158,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Le Cercle va nous pourchasser, il va falloir se tenir prêt.",
+      "path": "placeholder/158",
+      "continuer" : true
+    },
+    {
+      "id": 159,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Gong) Nous le serons, grâce à ce corps.",
+      "path": "placeholder/159",
+      "continuer" : true
+    },
+    {
+      "id": 160,
+      "name": "Barbatos",
+      "color": "bleu",
+      "dialogue": "Après tout, ce sera Gaap contre Nous.",
+      "path": "placeholder/160",
+      "continuer" : false
+    },
+    {
+      "id": 161,
+      "name": "Amdusias",
+      "color": "vert",
+      "dialogue": "(Ocarina) Ce n'est pas la bonne.",
+      "path": "placeholder/161",
       "continuer" : false
     }
   ]
