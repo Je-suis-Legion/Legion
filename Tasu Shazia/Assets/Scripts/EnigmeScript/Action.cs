@@ -1,39 +1,81 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Action : MonoBehaviour
 {
     private GameObject player;
-    public GameObject zoneDialogue;
-    public GameObject allTextEnviro;
+    private GameObject allInteractable;
+    private GameObject canvasPlayer;
+    private GameObject sousTitres;
+    private GameObject allTextEnviro;
 
-    public List<GameObject> listGonds;
-
-    public List<GameObject> listOdeurRouille;
-    public List<GameObject> barreAndKey;
+    private List<GameObject> listGonds = new List<GameObject>();
+    private List<GameObject> barreAndKey = new List<GameObject>();
     private bool odeurPorteFirts = true;
+    private bool hasClef = false;
+    
+    //A Ameliorer avec un parent commun et des get child
+    public List<GameObject> listOdeurRouille = new List<GameObject>();
     public GameObject odeurBarre;
     public GameObject odeurClef;
-    private bool hasClef = false;
-
-    public List<GameObject> listCodes;
+    
+    private List<GameObject> allSymbolesVue = new List<GameObject>();
     private bool vuePorteFirst = true;
-    public PositionCadenas positionCadenas;
-    public bool isInteractible = true;
+    private PositionCadenas positionCadenas;
     private bool codeInAnim = false;
-    public GameObject cadenas;
+    private GameObject cadenas;
     private int code = 1;
     private int codeMax = 6;
-    public bool goodCode = false;
-
-    public List<GameObject> charettes;
+    private bool goodCode = false;
+    
+    public bool isInteractible = true;
+    
+    private List<GameObject> charettes = new List<GameObject>();
     
     private void Awake()
     {
         player = GameObject.Find("Player");
+        allInteractable = GameObject.Find("allInteractable");
+        canvasPlayer = GameObject.Find("CanvasPlayer");
+        sousTitres = canvasPlayer.transform.GetChild(0).GetChild(1).gameObject;
+        allTextEnviro = canvasPlayer.transform.GetChild(0).GetChild(3).gameObject;
+        
+        foreach (Transform i in allInteractable.transform.GetChild(0))
+        {
+            listGonds.Add(i.gameObject);
+        }
+        
+        barreAndKey.Add(allInteractable.transform.GetChild(3).gameObject);
+        barreAndKey.Add(allInteractable.transform.GetChild(4).gameObject);
+
+        foreach (Transform i in GameObject.Find("allSymbolesVue").transform)
+        {
+            allSymbolesVue.Add(i.gameObject);
+        }
+
+        switch (gameObject.name)
+        {
+            case "Code1" :
+                positionCadenas = PositionCadenas.gauche;
+                break;
+            case "Code2" :
+                positionCadenas = PositionCadenas.centre;
+                break;
+            case "Code3" :
+                positionCadenas = PositionCadenas.droite;
+                break;
+        }
+
+        cadenas = allInteractable.transform.GetChild(7).gameObject;
+
+        foreach (Transform i in allInteractable.transform.GetChild(9))
+        {
+            charettes.Add(i.gameObject);
+        }
     }
 
     //Penser a ajouter les triggers
@@ -42,22 +84,24 @@ public class Action : MonoBehaviour
         switch (gameObject.name)
         {
             case "Gond" :
-                //animation de chute gonds soit en anim soit en forces
+                //Son du brisage des gonds
+                GameObject.Find("PorteCellule").GetComponent<Action>().listGonds.Remove(gameObject);
+                Destroy(gameObject);
                 break;
             case "PorteCellule" :
                 if (listGonds.Count == 0)
                 {
-                    //anim de la chute de la porte soit en anim soit en forces
-                    zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(32);
-                    StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(32, player));
+                    gameObject.GetComponent<Animator>().SetBool("Fall",true);
+                    sousTitres.GetComponent<SoustitresVoices>().ajoutList(32);
+                    StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(32, player));
                     allTextEnviro.transform.GetChild(19).gameObject.SetActive(true);
                 }
                 break;
             case "PorteOdeur" :
                 if (odeurPorteFirts)
                 {
-                    zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(47);
-                    StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(47, player));
+                    sousTitres.GetComponent<SoustitresVoices>().ajoutList(47);
+                    StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(47, player));
                     allTextEnviro.transform.GetChild(34).gameObject.SetActive(true);
                     foreach (var i in listOdeurRouille)
                     {
@@ -73,8 +117,8 @@ public class Action : MonoBehaviour
                 {
                     if (hasClef)
                     {
-                        zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(59);
-                        StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(59, player));
+                        sousTitres.GetComponent<SoustitresVoices>().ajoutList(59);
+                        StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(59, player));
                         allTextEnviro.transform.GetChild(46).gameObject.SetActive(true);
                         hasClef = false;
                         player.transform.GetChild(1).GetChild(7).gameObject.SetActive(false);
@@ -83,8 +127,8 @@ public class Action : MonoBehaviour
                     else
                     {
                         int temp = Random.Range(57, 59);
-                        zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(temp);
-                        StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(temp, player));
+                        sousTitres.GetComponent<SoustitresVoices>().ajoutList(temp);
+                        StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(temp, player));
                         switch (temp)
                         {
                             case 57 :
@@ -100,8 +144,8 @@ public class Action : MonoBehaviour
             case "BarreDeFer" :
                 player.GetComponent<PlayerMovement>().distanceInteractions = 10;
                 player.transform.GetChild(1).GetChild(6).gameObject.SetActive(true);
-                zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(51);
-                StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(51, player));
+                sousTitres.GetComponent<SoustitresVoices>().ajoutList(51);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(51, player));
                 allTextEnviro.transform.GetChild(38).gameObject.SetActive(true);
                 odeurBarre.SetActive(false);
                 gameObject.SetActive(false);
@@ -110,26 +154,26 @@ public class Action : MonoBehaviour
                 player.GetComponent<PlayerMovement>().distanceInteractions = 3;
                 player.transform.GetChild(1).GetChild(6).gameObject.SetActive(false);
                 player.transform.GetChild(1).GetChild(7).gameObject.SetActive(true);
-                zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(56);
-                StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(56, player));
+                sousTitres.GetComponent<SoustitresVoices>().ajoutList(56);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(56, player));
                 allTextEnviro.transform.GetChild(43).gameObject.SetActive(true);
                 odeurClef.SetActive(false);
                 hasClef = true;
                 gameObject.SetActive(false);
                 break;
             case "Marmitte" :
-                zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(62);
-                StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(62, player));
+                sousTitres.GetComponent<SoustitresVoices>().ajoutList(62);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(62, player));
                 allTextEnviro.transform.GetChild(49).gameObject.SetActive(true);
                 break;
             case "PorteVue" :
                 if (vuePorteFirst)
                 {
-                    zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(87);
-                    StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
+                    sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
+                    StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
                     allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
                     player.GetComponent<PlayerEffetVue>().enabled = true;
-                    foreach (var i in listCodes)
+                    foreach (var i in allSymbolesVue)
                     {
                         i.SetActive(true);
                     }
@@ -138,8 +182,8 @@ public class Action : MonoBehaviour
                 {
                     if (!goodCode)
                     {
-                        zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(98);
-                        StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(98, player));
+                        sousTitres.GetComponent<SoustitresVoices>().ajoutList(98);
+                        StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(98, player));
                         allTextEnviro.transform.GetChild(92).gameObject.SetActive(true);
                         //activer l'animation du candenas et de la porte
                     }
@@ -305,8 +349,8 @@ public class Action : MonoBehaviour
                 }
                 break;
             case "MauvaiseCharette" :
-                zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(161);
-                StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(161, player));
+                sousTitres.GetComponent<SoustitresVoices>().ajoutList(161);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(161, player));
                 allTextEnviro.transform.GetChild(134).gameObject.SetActive(true);
                 gameObject.layer = LayerMask.GetMask("Default");
                 StartCoroutine(Reactivate(10));
@@ -315,8 +359,8 @@ public class Action : MonoBehaviour
                 player.GetComponent<Look>().enabled = false;
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerMovement>().canInteract = false;
-                zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(156);
-                StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(156, player));
+                sousTitres.GetComponent<SoustitresVoices>().ajoutList(156);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(156, player));
                 allTextEnviro.transform.GetChild(129).gameObject.SetActive(true);
                 break;
         }

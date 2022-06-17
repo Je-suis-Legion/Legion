@@ -28,7 +28,6 @@ public class TriggerText : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //ameliorer avec un switch case en fonction de leurs nom
         //zoneText.GetComponent<SoustitresVoices>().ajoutList(idText);
         //StartCoroutine(zoneText.GetComponent<SoustitresVoices>().SoustitreVoice(idText,originSonore));
 
