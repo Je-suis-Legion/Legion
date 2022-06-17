@@ -41,9 +41,9 @@ public class Action : MonoBehaviour
         player = GameObject.Find("Player");
         allInteractable = GameObject.Find("allInteractable");
         canvasPlayer = GameObject.Find("CanvasPlayer");
+        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
         sousTitres = canvasPlayer.transform.GetChild(0).GetChild(1).gameObject;
-        allTextEnviro = canvasPlayer.transform.GetChild(0).GetChild(3).gameObject;
-        
+
         foreach (Transform i in allInteractable.transform.GetChild(0))
         {
             listGonds.Add(i.gameObject);

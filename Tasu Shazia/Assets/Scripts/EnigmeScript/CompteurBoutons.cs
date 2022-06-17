@@ -23,7 +23,7 @@ public class CompteurBoutons : MonoBehaviour
     {
         player = GameObject.Find("Player");
         zoneDialogue = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(1).gameObject;
-        allTextEnviro = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(3).gameObject;
+        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
 
         foreach (Transform i in transform.GetChild(1))
         {

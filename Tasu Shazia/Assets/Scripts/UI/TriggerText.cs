@@ -7,30 +7,19 @@ using Random = UnityEngine.Random;
 
 public class TriggerText : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject zoneDialogue;
-    public GameObject allTextEnviro;
-    
-    public int idText;
-    public GameObject originSonore;
-    public GameObject zoneText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private GameObject player;
+    private GameObject zoneDialogue;
+    private GameObject allTextEnviro;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        player = GameObject.Find("Player");
+        zoneDialogue = GameObject.Find("canvasPlayer").transform.GetChild(0).GetChild(1).gameObject;
+        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //zoneText.GetComponent<SoustitresVoices>().ajoutList(idText);
-        //StartCoroutine(zoneText.GetComponent<SoustitresVoices>().SoustitreVoice(idText,originSonore));
-
         switch (gameObject.name)
         {
             case "Id34 (Explo sortie cellule)" :
