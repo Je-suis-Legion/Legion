@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Action : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject zoneDialogue;
     public GameObject allTextEnviro;
 
@@ -23,13 +23,18 @@ public class Action : MonoBehaviour
     private bool vuePorteFirst = true;
     public PositionCadenas positionCadenas;
     public bool isInteractible = true;
+    private bool codeInAnim = false;
     public GameObject cadenas;
     private int code = 1;
     private int codeMax = 6;
     public bool goodCode = false;
 
     public List<GameObject> charettes;
-
+    
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
 
     //Penser a ajouter les triggers
     public void ActionEffectuer()
@@ -141,7 +146,7 @@ public class Action : MonoBehaviour
                 }
                 break;
             case "Code1" :
-                if (isInteractible)
+                if (isInteractible && !codeInAnim)
                 {
                     if (code == codeMax)
                     {
@@ -150,6 +155,28 @@ public class Action : MonoBehaviour
                     else
                     {
                         code++;
+                    }
+
+                    switch (code)
+                    {
+                        case 1 :
+                            StartCoroutine(RotationCadenas(0, 60));
+                            break;
+                        case 2 :
+                            StartCoroutine(RotationCadenas(60, 120));
+                            break;
+                        case 3 :
+                            StartCoroutine(RotationCadenas(120, 180));
+                            break;
+                        case 4 :
+                            StartCoroutine(RotationCadenas(180, 240));
+                            break;
+                        case 5 :
+                            StartCoroutine(RotationCadenas(240, 300));
+                            break;
+                        case 6 :
+                            StartCoroutine(RotationCadenas(300, 360));
+                            break;
                     }
 
                     switch (positionCadenas)
@@ -170,7 +197,7 @@ public class Action : MonoBehaviour
                 }
                 break;
             case "Code2" :
-                if (isInteractible)
+                if (isInteractible && !codeInAnim)
                 {
                     if (code == codeMax)
                     {
@@ -179,6 +206,28 @@ public class Action : MonoBehaviour
                     else
                     {
                         code++;
+                    }
+                    
+                    switch (code)
+                    {
+                        case 1 :
+                            StartCoroutine(RotationCadenas(0, 60));
+                            break;
+                        case 2 :
+                            StartCoroutine(RotationCadenas(60, 120));
+                            break;
+                        case 3 :
+                            StartCoroutine(RotationCadenas(120, 180));
+                            break;
+                        case 4 :
+                            StartCoroutine(RotationCadenas(180, 240));
+                            break;
+                        case 5 :
+                            StartCoroutine(RotationCadenas(240, 300));
+                            break;
+                        case 6 :
+                            StartCoroutine(RotationCadenas(300, 360));
+                            break;
                     }
 
                     switch (positionCadenas)
@@ -199,7 +248,7 @@ public class Action : MonoBehaviour
                 }
                 break;
             case "Code3" :
-                if (isInteractible)
+                if (isInteractible && !codeInAnim)
                 {
                     if (code == codeMax)
                     {
@@ -208,6 +257,28 @@ public class Action : MonoBehaviour
                     else
                     {
                         code++;
+                    }
+                    
+                    switch (code)
+                    {
+                        case 1 :
+                            StartCoroutine(RotationCadenas(0, 60));
+                            break;
+                        case 2 :
+                            StartCoroutine(RotationCadenas(60, 120));
+                            break;
+                        case 3 :
+                            StartCoroutine(RotationCadenas(120, 180));
+                            break;
+                        case 4 :
+                            StartCoroutine(RotationCadenas(180, 240));
+                            break;
+                        case 5 :
+                            StartCoroutine(RotationCadenas(240, 300));
+                            break;
+                        case 6 :
+                            StartCoroutine(RotationCadenas(300, 360));
+                            break;
                     }
 
                     switch (positionCadenas)
@@ -236,7 +307,7 @@ public class Action : MonoBehaviour
             case "MauvaiseCharette" :
                 zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(161);
                 StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(161, player));
-                allTextEnviro.transform.GetChild(135).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(134).gameObject.SetActive(true);
                 gameObject.layer = LayerMask.GetMask("Default");
                 StartCoroutine(Reactivate(10));
                 break;
@@ -246,7 +317,7 @@ public class Action : MonoBehaviour
                 player.GetComponent<PlayerMovement>().canInteract = false;
                 zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(156);
                 StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(156, player));
-                allTextEnviro.transform.GetChild(130).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(129).gameObject.SetActive(true);
                 break;
         }
     }
@@ -256,6 +327,20 @@ public class Action : MonoBehaviour
         yield return new WaitForSeconds(delay);
         gameObject.layer = LayerMask.GetMask("Interactable");
         yield return null;
+    }
+    
+    private IEnumerator RotationCadenas(float rotationActuelle, float objectif)
+    {
+        codeInAnim = true;
+        float timeElapsed = 0;
+        while (timeElapsed < 1) 
+        {
+            transform.rotation = Quaternion.Euler(Mathf.Lerp(rotationActuelle,objectif, timeElapsed / 1), transform.rotation.y, 90);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = Quaternion.Euler(objectif, transform.rotation.y, 90);
+        codeInAnim = false;
     }
 }
 
