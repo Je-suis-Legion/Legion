@@ -476,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c50f358d37859d4d92f6731bbd2090c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   zoneDialogue: {fileID: 0}
   allTextEnviro: {fileID: 0}
   listGonds: []
@@ -722,7 +721,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c50f358d37859d4d92f6731bbd2090c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   zoneDialogue: {fileID: 0}
   allTextEnviro: {fileID: 0}
   listGonds: []
@@ -1133,7 +1131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c50f358d37859d4d92f6731bbd2090c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   zoneDialogue: {fileID: 0}
   allTextEnviro: {fileID: 0}
   listGonds: []

@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Action : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public GameObject zoneDialogue;
     public GameObject allTextEnviro;
 
@@ -30,7 +30,11 @@ public class Action : MonoBehaviour
     public bool goodCode = false;
 
     public List<GameObject> charettes;
-
+    
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
 
     //Penser a ajouter les triggers
     public void ActionEffectuer()
