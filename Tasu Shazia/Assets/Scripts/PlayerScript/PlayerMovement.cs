@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public float distanceInteractions = 3;
     public LayerMask groundMask;
-    public bool canMove = true;
-    public bool canInteract = true;
+    public bool canMove = false;
+    public bool canInteract = false;
     [SerializeField] public List<GameObject> listItem;
+    public Canvas canvasJoueur;
+    public Sprite interactSprite;
 
     private int layerMaskInteractable;
     private Vector3 velocity;
@@ -22,14 +25,20 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private GameObject groundCheck;
     private bool isGrounded;
+    private Sprite defaultSprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        //a enlever pour le jeu
+        canMove = true;
+        canInteract = true;
+        //
         layerMaskInteractable = LayerMask.GetMask("Interactable");
         controller = gameObject.GetComponent<CharacterController>();
         groundCheck = transform.GetChild(2).gameObject;
         etatJoueur = EtatJoueur.Normal;
+        defaultSprite = canvasJoueur.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite;
     }
 
     private void Update()
@@ -42,21 +51,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canInteract)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyUp(KeyCode.Mouse0))
                 {
-                    //Debug.Log("oui");
-                    if (hit.collider.gameObject.tag == "Inventory")
-                    {
-                        listItem.Add(hit.collider.gameObject);
-                        hit.collider.gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        //a completer et tjrs le meme nom de fonction d'action
-                        hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
-                    }
+                    hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();
                 }
+
+                canvasJoueur.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = interactSprite;
+                canvasJoueur.transform.GetChild(0).GetChild(2).localScale = new Vector3(0.25f,0.25f,0.25f);
             }
+        }
+        else
+        {
+            canvasJoueur.transform.GetChild(0).GetChild(2).GetComponent<Image>().sprite = defaultSprite;
+            canvasJoueur.transform.GetChild(0).GetChild(2).localScale = new Vector3(0.02f,0.02f,0.02f);
         }
     }
 
