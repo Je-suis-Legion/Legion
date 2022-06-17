@@ -70,9 +70,9 @@ public class Action : MonoBehaviour
                 break;
         }
 
-        cadenas = allInteractable.transform.GetChild(7).gameObject;
+        cadenas = allInteractable.transform.GetChild(6).gameObject;
 
-        foreach (Transform i in allInteractable.transform.GetChild(9))
+        foreach (Transform i in allInteractable.transform.GetChild(8))
         {
             charettes.Add(i.gameObject);
         }
@@ -185,7 +185,6 @@ public class Action : MonoBehaviour
                         sousTitres.GetComponent<SoustitresVoices>().ajoutList(98);
                         StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(98, player));
                         allTextEnviro.transform.GetChild(92).gameObject.SetActive(true);
-                        //activer l'animation du candenas et de la porte
                     }
                 }
                 break;
@@ -204,22 +203,22 @@ public class Action : MonoBehaviour
                     switch (code)
                     {
                         case 1 :
-                            StartCoroutine(RotationCadenas(0, 60));
+                            StartCoroutine(RotationCadenas(0 - 18.82f, 60 - 18.82f));
                             break;
                         case 2 :
-                            StartCoroutine(RotationCadenas(60, 120));
+                            StartCoroutine(RotationCadenas(60 - 18.82f, 120 - 18.82f));
                             break;
                         case 3 :
-                            StartCoroutine(RotationCadenas(120, 180));
+                            StartCoroutine(RotationCadenas(120 - 18.82f, 180 - 18.82f));
                             break;
                         case 4 :
-                            StartCoroutine(RotationCadenas(180, 240));
+                            StartCoroutine(RotationCadenas(180 - 18.82f, 240 - 18.82f));
                             break;
                         case 5 :
-                            StartCoroutine(RotationCadenas(240, 300));
+                            StartCoroutine(RotationCadenas(240 - 18.82f, 300 - 18.82f));
                             break;
                         case 6 :
-                            StartCoroutine(RotationCadenas(300, 360));
+                            StartCoroutine(RotationCadenas(300 - 18.82f, 360 - 18.82f));
                             break;
                     }
 
@@ -237,7 +236,6 @@ public class Action : MonoBehaviour
                     }
             
                     cadenas.GetComponent<CompteurBoutons>().CheckList();
-                    //animation de rotation de 60 degres vers le haut (sur l'axe z normalement)
                 }
                 break;
             case "Code2" :
@@ -255,22 +253,22 @@ public class Action : MonoBehaviour
                     switch (code)
                     {
                         case 1 :
-                            StartCoroutine(RotationCadenas(0, 60));
+                            StartCoroutine(RotationCadenas(0 - 18.82f, 60 - 18.82f));
                             break;
                         case 2 :
-                            StartCoroutine(RotationCadenas(60, 120));
+                            StartCoroutine(RotationCadenas(60 - 18.82f, 120 - 18.82f));
                             break;
                         case 3 :
-                            StartCoroutine(RotationCadenas(120, 180));
+                            StartCoroutine(RotationCadenas(120 - 18.82f, 180 - 18.82f));
                             break;
                         case 4 :
-                            StartCoroutine(RotationCadenas(180, 240));
+                            StartCoroutine(RotationCadenas(180 - 18.82f, 240 - 18.82f));
                             break;
                         case 5 :
-                            StartCoroutine(RotationCadenas(240, 300));
+                            StartCoroutine(RotationCadenas(240 - 18.82f, 300 - 18.82f));
                             break;
                         case 6 :
-                            StartCoroutine(RotationCadenas(300, 360));
+                            StartCoroutine(RotationCadenas(300 - 18.82f, 360 - 18.82f));
                             break;
                     }
 
@@ -288,7 +286,6 @@ public class Action : MonoBehaviour
                     }
             
                     cadenas.GetComponent<CompteurBoutons>().CheckList();
-                    //animation de rotation de 60 degres vers le haut (sur l'axe z normalement)
                 }
                 break;
             case "Code3" :
@@ -306,22 +303,22 @@ public class Action : MonoBehaviour
                     switch (code)
                     {
                         case 1 :
-                            StartCoroutine(RotationCadenas(0, 60));
+                            StartCoroutine(RotationCadenas(0 - 18.82f, 60 - 18.82f));
                             break;
                         case 2 :
-                            StartCoroutine(RotationCadenas(60, 120));
+                            StartCoroutine(RotationCadenas(60 - 18.82f, 120 - 18.82f));
                             break;
                         case 3 :
-                            StartCoroutine(RotationCadenas(120, 180));
+                            StartCoroutine(RotationCadenas(120 - 18.82f, 180 - 18.82f));
                             break;
                         case 4 :
-                            StartCoroutine(RotationCadenas(180, 240));
+                            StartCoroutine(RotationCadenas(180 - 18.82f, 240 - 18.82f));
                             break;
                         case 5 :
-                            StartCoroutine(RotationCadenas(240, 300));
+                            StartCoroutine(RotationCadenas(240 - 18.82f, 300 - 18.82f));
                             break;
                         case 6 :
-                            StartCoroutine(RotationCadenas(300, 360));
+                            StartCoroutine(RotationCadenas(300 - 18.82f, 360 - 18.82f));
                             break;
                     }
 
@@ -339,7 +336,6 @@ public class Action : MonoBehaviour
                     }
             
                     cadenas.GetComponent<CompteurBoutons>().CheckList();
-                    //animation de rotation de 60 degres vers le haut (sur l'axe z normalement)
                 }
                 break;
             case "MurUtile" :
