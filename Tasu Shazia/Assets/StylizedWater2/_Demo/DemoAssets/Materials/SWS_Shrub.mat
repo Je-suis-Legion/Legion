@@ -26,7 +26,6 @@ Material:
   m_Name: SWS_Shrub
   m_Shader: {fileID: -6465566751694194690, guid: e2335271dc0537147af5dbcb5f4ece06, type: 3}
   m_ValidKeywords:
-  - _ALPHATEST_ON
   - _DISABLE_DECALS
   - _DISABLE_SSR_TRANSPARENT
   - _DOUBLESIDED_ON
@@ -35,8 +34,7 @@ Material:
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: 2450
-  stringTagMap:
-    RenderType: TransparentCutout
+  stringTagMap: {}
   disabledShaderPasses:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
