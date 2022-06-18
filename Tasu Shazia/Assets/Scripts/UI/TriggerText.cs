@@ -14,7 +14,7 @@ public class TriggerText : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player");
-        zoneDialogue = GameObject.Find("canvasPlayer").transform.GetChild(0).GetChild(1).gameObject;
+        zoneDialogue = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(1).gameObject;
         allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
     }
 

@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Others/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
+    path: Assets/Scenes/Others/Nicolas_Main_Menu.unity
+    guid: 2e4241bdb3ed2ad45a30bb907c1d6f2a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Niveau.unity
+    guid: ce5fdf21f257a1f44b29e6f0eca1d933
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9f1a5adb561229c4e9988d83ecd661ad, type: 2}

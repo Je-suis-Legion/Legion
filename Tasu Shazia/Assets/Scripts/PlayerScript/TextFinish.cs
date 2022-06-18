@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Searcher;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class TextFinish : MonoBehaviour
 {
+    public Material screenEffectMat;
+    
     private GameObject canvasPlayer;
     private GameObject sousTitres;
     private GameObject animationMaskOdorat;
@@ -33,6 +34,8 @@ public class TextFinish : MonoBehaviour
         {
             listTriggerMaison.Add(i.gameObject);
         }
+        
+        screenEffectMat.SetFloat("FullscreenIntensity", 0f);
     }
 
     public void Action(int idText)
@@ -773,6 +776,25 @@ public class TextFinish : MonoBehaviour
     private IEnumerator SwitchYokai(int id, GameObject obj, float delay, GameObject mask)
     {
         yield return new WaitForSeconds(delay);
+
+        if (screenEffectMat.GetFloat("FullscreenIntensity") != 0.15f)
+        {
+            screenEffectMat.SetFloat("FullscreenIntensity", 0.15f);
+        }
+
+        switch (mask.name)
+        {
+            case "MaskOdorat" :
+                screenEffectMat.color = new Color(148,0,211);
+                break;
+            case "MaskVue" :
+                screenEffectMat.color = Color.blue;
+                break;
+            case "MaskOuie" :
+                screenEffectMat.color = Color.green;
+                break;
+        }
+        
         sousTitres.GetComponent<SoustitresVoices>().ajoutList(id);
         StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(id, obj));
         gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = true;

@@ -30,10 +30,10 @@ public class CompteurBoutons : MonoBehaviour
             listBoutton.Add(i.gameObject);
         }
         
-        foreach (Transform i in GameObject.Find("allSymbolesVue").transform)
+        /*foreach (Transform i in GameObject.Find("allSymbolesVue").transform)
         {
             listCameraZoom.Add(i.gameObject);
-        }
+        }*/
     }
 
     private void OnEnable()
@@ -78,8 +78,7 @@ public class CompteurBoutons : MonoBehaviour
             {
                 i.GetComponent<CameraZoom>().enabled = false;
             }
-            gameObject.GetComponent<Animator>().SetBool("Fall", true);
-            //Destroy(gameObject);
+            gameObject.GetComponent<Animator>().SetTrigger("Fall");
         }
         
         foreach (var i in listBoutton)
