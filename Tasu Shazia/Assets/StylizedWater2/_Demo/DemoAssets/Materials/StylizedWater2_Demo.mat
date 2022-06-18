@@ -160,19 +160,19 @@ Material:
     - _NormalMap: 1
     - _NormalMapOn: 1
     - _NormalSpeed: 0.2
-    - _NormalStrength: 0.202
-    - _NormalTiling: -0.48000008
+    - _NormalStrength: 0.375
+    - _NormalTiling: -0.35999995
     - _OcclusionStrength: 1
     - _PlanarReflectionsEnabled: 0
     - _PlanarReflectionsParams: 0
-    - _PointSpotLightReflectionExp: 64
+    - _PointSpotLightReflectionExp: 128
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _ReflectionBlur: 0
-    - _ReflectionDistortion: 0.09
+    - _ReflectionDistortion: 0
     - _ReflectionFresnel: 5
-    - _ReflectionLighting: 0
-    - _ReflectionStrength: 0.5
+    - _ReflectionLighting: 0.045
+    - _ReflectionStrength: 0.191
     - _Reflectivity: 1
     - _RefractionAmount: 0.05
     - _RefractionOn: 1
@@ -181,7 +181,7 @@ Material:
     - _RimTiling: 0.025
     - _SHARP_INERSECTIONOn: 1
     - _ShadingMode: 1
-    - _ShadowStrength: 1
+    - _ShadowStrength: 0.782
     - _ShoreLineLength: 0
     - _ShoreLineWaveDistance: 23
     - _ShoreLineWaveStr: 1
@@ -189,12 +189,12 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SparkleIntensity: 0
-    - _SparkleSize: 0.302
+    - _SparkleSize: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SunReflectionDistortion: 0.49
     - _SunReflectionPerturbance: 0.386
-    - _SunReflectionSize: 0.932
+    - _SunReflectionSize: 0.645
     - _SunReflectionStrength: 10
     - _Surface: 0
     - _TEXTURE_INTERSECTIONOn: 0
@@ -228,7 +228,7 @@ Material:
     - _ShallowColor: {r: 0, g: 0, b: 0, a: 0.5254902}
     - _SlopeParams: {r: 0.5, g: 4, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _TranslucencyParams: {r: 1, g: 2.51, b: 0, a: 0}
+    - _TranslucencyParams: {r: 0.93, g: 2.51, b: 0, a: 0}
     - _VertexColorMask: {r: 0, g: 0, b: 0, a: 0}
     - _WaterColor: {r: 0.21176466, g: 0.6745098, b: 1, a: 1}
     - _WaterShallowColor: {r: 0, g: 0.9394503, b: 1, a: 1}
