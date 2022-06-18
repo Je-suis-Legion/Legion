@@ -4130,18 +4130,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5014a7d051680944af36ac505299d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  zoneDialogue: {fileID: 0}
-  animationMaskOdorat: {fileID: 0}
-  listOdaratMat: []
-  animationMaskVue: {fileID: 0}
-  listVueMat: []
-  animationMaskOuie: {fileID: 0}
-  listOuieMat: []
-  listTriggerMaison: []
-  canvasJoueur: {fileID: 0}
-  allTextEnviro: {fileID: 0}
-  allTriggerText: {fileID: 0}
+  listOdaratMat:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  listVueMat:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  listOuieMat:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!82 &5855532496643985328
 AudioSource:
   m_ObjectHideFlags: 0
