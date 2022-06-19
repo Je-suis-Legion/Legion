@@ -5,20 +5,36 @@ using UnityEngine;
 
 public class CompteurBoutons : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject porte;
-    public GameObject zoneDialogue;
-    public GameObject allTextEnviro;
+    private GameObject player;
+    private GameObject zoneDialogue;
+    private GameObject allTextEnviro;
     
-    public List<GameObject> listBoutton;
-    public List<int> combinaisonCadenas;
+    private List<GameObject> listBoutton = new List<GameObject>();
+    private List<int> combinaisonCadenas = new List<int>();
     public List<int> codeCadenas;
-    public List<GameObject> listCameraZoom;
+    private List<GameObject> listCameraZoom = new List<GameObject>();
     public int codeGauche;
     public int codeCentre;
     public int codeDroite;
 
     private int compteur;
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+        zoneDialogue = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(1).gameObject;
+        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
+
+        foreach (Transform i in transform.GetChild(1))
+        {
+            listBoutton.Add(i.gameObject);
+        }
+        
+        /*foreach (Transform i in GameObject.Find("allSymbolesVue").transform)
+        {
+            listCameraZoom.Add(i.gameObject);
+        }*/
+    }
 
     private void OnEnable()
     {
@@ -54,13 +70,15 @@ public class CompteurBoutons : MonoBehaviour
             StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(99, player));
             allTextEnviro.transform.GetChild(93).gameObject.SetActive(true);
             //Effet sonore de clique ? (deverouillage)
-            porte.GetComponent<Action>().goodCode = true;
+            
+            transform.GetChild(2).GetChild(0).gameObject.layer = LayerMask.GetMask("Default");
+            transform.GetChild(3).GetChild(0).gameObject.layer = LayerMask.GetMask("Default");
+
             foreach (var i in listCameraZoom)
             {
                 i.GetComponent<CameraZoom>().enabled = false;
             }
-            Destroy(gameObject);
-            //animation de la chute du cadenas + ouverture de la porte
+            gameObject.GetComponent<Animator>().SetTrigger("Fall");
         }
         
         foreach (var i in listBoutton)

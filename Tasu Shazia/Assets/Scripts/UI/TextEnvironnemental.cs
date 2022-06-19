@@ -12,24 +12,26 @@ public class TextEnvironnemental : MonoBehaviour
     
     private Color color;
 
-    private void OnEnable()
-    {
-        StartCoroutine(Fade(false));
-    }
-
-    private void OnDisable()
-    {
-        StartCoroutine(Fade(true));
-    }
-
-    void Start()
+    private void Awake()
     {
         dialogues = JsonUtility.FromJson<Dialogues>(json.text);
         gameObject.GetComponent<TextMeshPro>().color = tradColor(dialogues.dialogues[idText].color);
-        gameObject.GetComponent<TextMeshPro>().text =
-            dialogues.dialogues[idText].name + " : " + dialogues.dialogues[idText].dialogue;
+        gameObject.GetComponent<TextMeshPro>().text = dialogues.dialogues[idText].dialogue;
     }
-    
+
+    private void OnEnable()
+    {
+        StartCoroutine(Fade(false));
+        transform.position = GameObject.Find("Player").transform.GetChild(1).GetChild(0).position + GameObject.Find("Player").transform.GetChild(1).GetChild(0).forward * 5;
+        transform.rotation = GameObject.Find("Player").transform.GetChild(1).GetChild(0).rotation;
+    }
+
+    public void Disable()
+    {
+        StartCoroutine(Fade(true));
+        gameObject.SetActive(false);
+    }
+
     private Color tradColor(string color)
     {
         Color couleur = Color.black;

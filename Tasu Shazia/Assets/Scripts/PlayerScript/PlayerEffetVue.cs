@@ -21,9 +21,9 @@ public class PlayerEffetVue : MonoBehaviour
             i.gameObject.GetComponent<Outline>().enabled = true;
         }
         //Peut etre un peu brusque donc voir avec coroutine pour plus smooth
-        audioManager.SetFloat("frequenceEffetInGame", freqVue);
+        /*audioManager.SetFloat("frequenceEffetInGame", freqVue);
         audioManager.SetFloat("frequenceMusiqueInGame", freqVue);
-        audioManager.SetFloat("frequenceDialoguesInGame", freqVue);
+        audioManager.SetFloat("frequenceDialoguesInGame", freqVue);*/
     }
 
     private void OnDisable()
@@ -33,8 +33,8 @@ public class PlayerEffetVue : MonoBehaviour
             i.gameObject.GetComponent<Outline>().enabled = false;
         }
         //Peut etre un peu brusque donc voir avec coroutine pour plus smooth
-        audioManager.SetFloat("frequenceEffetInGame", freqOrigin);
+        /*audioManager.SetFloat("frequenceEffetInGame", freqOrigin);
         audioManager.SetFloat("frequenceMusiqueInGame", freqOrigin);
-        audioManager.SetFloat("frequenceDialoguesInGame", freqOrigin);
+        audioManager.SetFloat("frequenceDialoguesInGame", freqOrigin);*/
     }
 }
