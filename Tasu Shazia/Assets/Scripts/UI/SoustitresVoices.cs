@@ -12,7 +12,9 @@ public class SoustitresVoices : MonoBehaviour
     public TextAsset json;
     
     [SerializeField]
-    private List<int> listLecture;
+    private GameObject player;
+    private List<int> listLecture = new List<int>();
+    private GameObject allTextEnviro;
     private AudioClip clip;
     private float textDuration;
     private Color color;
@@ -21,7 +23,12 @@ public class SoustitresVoices : MonoBehaviour
     void Start()
     {
         dialogues = JsonUtility.FromJson<Dialogues>(json.text);
+        player = GameObject.Find("Player");
+        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
         //SoustitreVoice(0,gameObject);
+        //Cinematique d'intro
+        ajoutList(0);
+        StartCoroutine(SoustitreVoice(0, player));
     }
 
     public void ajoutList(int id)
@@ -70,6 +77,68 @@ public class SoustitresVoices : MonoBehaviour
             }
             gameObject.GetComponent<TextMeshProUGUI>().color = tradColor(dialogues.dialogues[listLecture[0]].color);
             StartCoroutine(DefilementText(listLecture[0], textDuration, objetSonore));
+
+            switch (id)
+            {
+                case 34 :
+                    allTextEnviro.transform.GetChild(21).gameObject.SetActive(true);
+                    break;
+                case 39 :
+                    allTextEnviro.transform.GetChild(26).gameObject.SetActive(true);
+                    break;
+                case 54 :
+                    allTextEnviro.transform.GetChild(41).gameObject.SetActive(true);
+                    break;
+                case 63 :
+                    allTextEnviro.transform.GetChild(50).gameObject.SetActive(true);
+                    break;
+                case 65 :
+                    allTextEnviro.transform.GetChild(52).gameObject.SetActive(true);
+                    break;
+                case 66 :
+                    allTextEnviro.transform.GetChild(53).gameObject.SetActive(true);
+                    break;
+                case 67 :
+                    allTextEnviro.transform.GetChild(54).gameObject.SetActive(true);
+                    break;
+                case 75 :
+                    allTextEnviro.transform.GetChild(62).gameObject.SetActive(true);
+                    allTextEnviro.transform.GetChild(63).gameObject.SetActive(true);
+                    break;
+                case 82 :
+                    allTextEnviro.transform.GetChild(76).gameObject.SetActive(true);
+                    break;
+                case 92 :
+                    allTextEnviro.transform.GetChild(86).gameObject.SetActive(true);
+                    break;
+                case 94 :
+                    allTextEnviro.transform.GetChild(88).gameObject.SetActive(true);
+                    break;
+                case 101 :
+                    allTextEnviro.transform.GetChild(95).gameObject.SetActive(true);
+                    break;
+                case 103 :
+                    allTextEnviro.transform.GetChild(97).gameObject.SetActive(true);
+                    break;
+                case 104 :
+                    allTextEnviro.transform.GetChild(98).gameObject.SetActive(true);
+                    break;
+                case 106 :
+                    allTextEnviro.transform.GetChild(100).gameObject.SetActive(true);
+                    break;
+                case 110 :
+                    allTextEnviro.transform.GetChild(104).gameObject.SetActive(true);
+                    break;
+                case 111 :
+                    allTextEnviro.transform.GetChild(105).gameObject.SetActive(true);
+                    break;
+                case 120 :
+                    allTextEnviro.transform.GetChild(114).gameObject.SetActive(true);
+                    break;
+                case 122 :
+                    allTextEnviro.transform.GetChild(116).gameObject.SetActive(true);
+                    break;
+            }
 
             yield return null;
         }

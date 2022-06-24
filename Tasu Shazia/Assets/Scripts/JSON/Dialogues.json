@@ -335,7 +335,7 @@
       "color": "violet",
       "dialogue": "Je mangeais ça avec mon précédent hôte. Rien de tel que ce repas quand on a pas un sou.",
       "path": "placeholder/41",
-      "continuer" : true
+      "continuer" : false
     },
     {
       "id": 42,
@@ -487,7 +487,7 @@
       "color": "rouge",
       "dialogue": "Fuyons ! Je sens des regards !",
       "path": "placeholder/60",
-      "continuer" : false
+      "continuer" : true
     },
     {
       "id": 61,
@@ -567,7 +567,7 @@
       "color": "bleu",
       "dialogue": "Cette statue rend honneur à ma personne !",
       "path": "placeholder/70",
-      "continuer" : true
+      "continuer" : false
     },
     {
       "id": 71,
@@ -903,7 +903,7 @@
       "color": "vert",
       "dialogue": "Saviez-vous qu'il existe plusieurs types de cloches pour diverses occasions ?",
       "path": "placeholder/112",
-      "continuer" : true
+      "continuer" : false
     },
     {
       "id": 113,

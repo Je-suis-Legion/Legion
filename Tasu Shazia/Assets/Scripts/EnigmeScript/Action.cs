@@ -12,6 +12,7 @@ public class Action : MonoBehaviour
     private GameObject canvasPlayer;
     private GameObject sousTitres;
     private GameObject allTextEnviro;
+    private GameObject allTriggerText;
 
     private List<GameObject> listGonds = new List<GameObject>();
     private List<GameObject> barreAndKey = new List<GameObject>();
@@ -35,14 +36,15 @@ public class Action : MonoBehaviour
     public bool isInteractible = true;
     
     private List<GameObject> charettes = new List<GameObject>();
-    
+
     private void Awake()
     {
         player = GameObject.Find("Player");
         allInteractable = GameObject.Find("allInteractable");
         canvasPlayer = GameObject.Find("CanvasPlayer");
         allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
-        sousTitres = canvasPlayer.transform.GetChild(0).GetChild(1).gameObject;
+        sousTitres = canvasPlayer.transform.GetChild(0).GetChild(2).gameObject;
+        allTriggerText = GameObject.Find("AllTextTrigger");
 
         foreach (Transform i in allInteractable.transform.GetChild(0))
         {
@@ -76,9 +78,10 @@ public class Action : MonoBehaviour
         {
             charettes.Add(i.gameObject);
         }
+        
+        allInteractable.transform.GetChild(2).gameObject.GetComponent<Animator>().speed = 0;
     }
-
-    //Penser a ajouter les triggers
+    
     public void ActionEffectuer()
     {
         switch (gameObject.name)
@@ -95,6 +98,8 @@ public class Action : MonoBehaviour
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(32);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(32, player));
                     allTextEnviro.transform.GetChild(19).gameObject.SetActive(true);
+                    gameObject.GetComponent<Outline>().enabled = false;
+                    gameObject.layer = LayerMask.NameToLayer("Default");
                 }
                 break;
             case "PorteOdeur" :
@@ -109,8 +114,10 @@ public class Action : MonoBehaviour
                     }
                     foreach (var i in barreAndKey)
                     {
-                        i.layer = LayerMask.GetMask("Interactable");
+                        i.layer = LayerMask.NameToLayer("Interactable");
+                        i.GetComponent<Outline>().enabled = true;
                     }
+                    allInteractable.transform.GetChild(5).GetChild(1).gameObject.layer = LayerMask.NameToLayer("Interactable");
                     odeurPorteFirts = false;
                 }
                 else
@@ -122,7 +129,9 @@ public class Action : MonoBehaviour
                         allTextEnviro.transform.GetChild(46).gameObject.SetActive(true);
                         hasClef = false;
                         player.transform.GetChild(1).GetChild(7).gameObject.SetActive(false);
-                        //activer l'animation du candenas et de la porte
+                        transform.parent.parent.gameObject.GetComponent<Animator>().speed = 1;
+                        gameObject.layer = LayerMask.NameToLayer("Default");
+                        gameObject.GetComponent<Outline>().enabled = false;
                     }
                     else
                     {
@@ -158,25 +167,46 @@ public class Action : MonoBehaviour
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(56, player));
                 allTextEnviro.transform.GetChild(43).gameObject.SetActive(true);
                 odeurClef.SetActive(false);
-                hasClef = true;
+                transform.parent.GetChild(2).GetChild(2).GetChild(0).GetComponent<Action>().hasClef = true;
                 gameObject.SetActive(false);
                 break;
             case "Marmitte" :
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(62);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(62, player));
                 allTextEnviro.transform.GetChild(49).gameObject.SetActive(true);
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                gameObject.GetComponent<Outline>().enabled = false;
                 break;
             case "PorteVue" :
+                Debug.Log(vuePorteFirst);
                 if (vuePorteFirst)
                 {
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
                     allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
-                    player.GetComponent<PlayerEffetVue>().enabled = true;
                     foreach (var i in allSymbolesVue)
                     {
                         i.SetActive(true);
                     }
+
+                    transform.parent.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(3).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(1).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(2).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    
+                    allTriggerText.transform.GetChild(8).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(9).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(10).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(11).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(12).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(13).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(14).gameObject.SetActive(true);
                 }
                 else
                 {
@@ -189,166 +219,277 @@ public class Action : MonoBehaviour
                 }
                 break;
             case "Code1" :
-                if (isInteractible && !codeInAnim)
+                Debug.Log(vuePorteFirst);
+                if (vuePorteFirst)
                 {
-                    if (code == codeMax)
+                    sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
+                    StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
+                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    foreach (var i in allSymbolesVue)
                     {
-                        code = 1;
-                    }
-                    else
-                    {
-                        code++;
-                    }
-
-                    switch (code)
-                    {
-                        case 1 :
-                            StartCoroutine(RotationCadenas(0 - 18.82f, 60 - 18.82f));
-                            break;
-                        case 2 :
-                            StartCoroutine(RotationCadenas(60 - 18.82f, 120 - 18.82f));
-                            break;
-                        case 3 :
-                            StartCoroutine(RotationCadenas(120 - 18.82f, 180 - 18.82f));
-                            break;
-                        case 4 :
-                            StartCoroutine(RotationCadenas(180 - 18.82f, 240 - 18.82f));
-                            break;
-                        case 5 :
-                            StartCoroutine(RotationCadenas(240 - 18.82f, 300 - 18.82f));
-                            break;
-                        case 6 :
-                            StartCoroutine(RotationCadenas(300 - 18.82f, 360 - 18.82f));
-                            break;
+                        i.SetActive(true);
                     }
 
-                    switch (positionCadenas)
+                    transform.parent.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(3).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(1).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(2).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    
+                    allTriggerText.transform.GetChild(8).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(9).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(10).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(11).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(12).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(13).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(14).gameObject.SetActive(true);
+                }
+                else
+                {
+                    if (isInteractible && !codeInAnim)
                     {
-                        case PositionCadenas.gauche:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[0] = code;
-                            break;
-                        case PositionCadenas.centre:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[1] = code;
-                            break;
-                        case PositionCadenas.droite:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[2] = code;
-                            break;
-                    }
+                        if (code == codeMax)
+                        {
+                            code = 1;
+                        }
+                        else
+                        {
+                            code++;
+                        }
+
+                        switch (code)
+                        {
+                            case 1 :
+                                StartCoroutine(RotationCadenas(0, 60));
+                                break;
+                            case 2 :
+                                StartCoroutine(RotationCadenas(60, 120));
+                                break;
+                            case 3 :
+                                StartCoroutine(RotationCadenas(120, 180));
+                                break;
+                            case 4 :
+                                StartCoroutine(RotationCadenas(180, 240));
+                                break;
+                            case 5 :
+                                StartCoroutine(RotationCadenas(240, 300));
+                                break;
+                            case 6 :
+                                StartCoroutine(RotationCadenas(300, 360));
+                                break;
+                        }
+
+                        switch (positionCadenas)
+                        {
+                            case PositionCadenas.gauche:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[0] = code;
+                                break;
+                            case PositionCadenas.centre:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[1] = code;
+                                break;
+                            case PositionCadenas.droite:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[2] = code;
+                                break;
+                        }
             
-                    cadenas.GetComponent<CompteurBoutons>().CheckList();
+                        cadenas.GetComponent<CompteurBoutons>().CheckList();
+                    }
                 }
                 break;
             case "Code2" :
-                if (isInteractible && !codeInAnim)
+                Debug.Log(vuePorteFirst);
+                if (vuePorteFirst)
                 {
-                    if (code == codeMax)
+                    sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
+                    StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
+                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    foreach (var i in allSymbolesVue)
                     {
-                        code = 1;
-                    }
-                    else
-                    {
-                        code++;
-                    }
-                    
-                    switch (code)
-                    {
-                        case 1 :
-                            StartCoroutine(RotationCadenas(0 - 18.82f, 60 - 18.82f));
-                            break;
-                        case 2 :
-                            StartCoroutine(RotationCadenas(60 - 18.82f, 120 - 18.82f));
-                            break;
-                        case 3 :
-                            StartCoroutine(RotationCadenas(120 - 18.82f, 180 - 18.82f));
-                            break;
-                        case 4 :
-                            StartCoroutine(RotationCadenas(180 - 18.82f, 240 - 18.82f));
-                            break;
-                        case 5 :
-                            StartCoroutine(RotationCadenas(240 - 18.82f, 300 - 18.82f));
-                            break;
-                        case 6 :
-                            StartCoroutine(RotationCadenas(300 - 18.82f, 360 - 18.82f));
-                            break;
+                        i.SetActive(true);
                     }
 
-                    switch (positionCadenas)
+                    transform.parent.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(3).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(1).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(2).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    
+                    allTriggerText.transform.GetChild(8).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(9).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(10).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(11).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(12).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(13).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(14).gameObject.SetActive(true);
+                }
+                else
+                {
+                    if (isInteractible && !codeInAnim)
                     {
-                        case PositionCadenas.gauche:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[0] = code;
-                            break;
-                        case PositionCadenas.centre:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[1] = code;
-                            break;
-                        case PositionCadenas.droite:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[2] = code;
-                            break;
-                    }
+                        if (code == codeMax)
+                        {
+                            code = 1;
+                        }
+                        else
+                        {
+                            code++;
+                        }
+                    
+                        switch (code)
+                        {
+                            case 1 :
+                                StartCoroutine(RotationCadenas(0, 60));
+                                break;
+                            case 2 :
+                                StartCoroutine(RotationCadenas(60, 120));
+                                break;
+                            case 3 :
+                                StartCoroutine(RotationCadenas(120, 180));
+                                break;
+                            case 4 :
+                                StartCoroutine(RotationCadenas(180, 240));
+                                break;
+                            case 5 :
+                                StartCoroutine(RotationCadenas(240, 300));
+                                break;
+                            case 6 :
+                                StartCoroutine(RotationCadenas(300, 360));
+                                break;
+                        }
+
+                        switch (positionCadenas)
+                        {
+                            case PositionCadenas.gauche:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[0] = code;
+                                break;
+                            case PositionCadenas.centre:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[1] = code;
+                                break;
+                            case PositionCadenas.droite:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[2] = code;
+                                break;
+                        }
             
-                    cadenas.GetComponent<CompteurBoutons>().CheckList();
+                        cadenas.GetComponent<CompteurBoutons>().CheckList();
+                    }
                 }
                 break;
             case "Code3" :
-                if (isInteractible && !codeInAnim)
+                Debug.Log(vuePorteFirst);
+                if (vuePorteFirst)
                 {
-                    if (code == codeMax)
+                    sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
+                    StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
+                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    foreach (var i in allSymbolesVue)
                     {
-                        code = 1;
-                    }
-                    else
-                    {
-                        code++;
-                    }
-                    
-                    switch (code)
-                    {
-                        case 1 :
-                            StartCoroutine(RotationCadenas(0 - 18.82f, 60 - 18.82f));
-                            break;
-                        case 2 :
-                            StartCoroutine(RotationCadenas(60 - 18.82f, 120 - 18.82f));
-                            break;
-                        case 3 :
-                            StartCoroutine(RotationCadenas(120 - 18.82f, 180 - 18.82f));
-                            break;
-                        case 4 :
-                            StartCoroutine(RotationCadenas(180 - 18.82f, 240 - 18.82f));
-                            break;
-                        case 5 :
-                            StartCoroutine(RotationCadenas(240 - 18.82f, 300 - 18.82f));
-                            break;
-                        case 6 :
-                            StartCoroutine(RotationCadenas(300 - 18.82f, 360 - 18.82f));
-                            break;
+                        i.SetActive(true);
                     }
 
-                    switch (positionCadenas)
+                    transform.parent.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(3).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(1).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    transform.parent.parent.GetChild(1).GetChild(2).gameObject.GetComponent<Action>().vuePorteFirst =
+                        false;
+                    
+                    allTriggerText.transform.GetChild(8).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(9).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(10).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(11).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(12).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(13).gameObject.SetActive(true);
+                    allTriggerText.transform.GetChild(14).gameObject.SetActive(true);
+                }
+                else
+                {
+                    if (isInteractible && !codeInAnim)
                     {
-                        case PositionCadenas.gauche:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[0] = code;
-                            break;
-                        case PositionCadenas.centre:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[1] = code;
-                            break;
-                        case PositionCadenas.droite:
-                            cadenas.GetComponent<CompteurBoutons>().codeCadenas[2] = code;
-                            break;
-                    }
+                        if (code == codeMax)
+                        {
+                            code = 1;
+                        }
+                        else
+                        {
+                            code++;
+                        }
+                    
+                        switch (code)
+                        {
+                            //-18.82f
+                            case 1 :
+                                StartCoroutine(RotationCadenas(0, 60));
+                                break;
+                            case 2 :
+                                StartCoroutine(RotationCadenas(60, 120));
+                                break;
+                            case 3 :
+                                StartCoroutine(RotationCadenas(120, 180));
+                                break;
+                            case 4 :
+                                StartCoroutine(RotationCadenas(180, 240));
+                                break;
+                            case 5 :
+                                StartCoroutine(RotationCadenas(240, 300));
+                                break;
+                            case 6 :
+                                StartCoroutine(RotationCadenas(300, 360));
+                                break;
+                        }
+
+                        switch (positionCadenas)
+                        {
+                            case PositionCadenas.gauche:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[0] = code;
+                                break;
+                            case PositionCadenas.centre:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[1] = code;
+                                break;
+                            case PositionCadenas.droite:
+                                cadenas.GetComponent<CompteurBoutons>().codeCadenas[2] = code;
+                                break;
+                        }
             
-                    cadenas.GetComponent<CompteurBoutons>().CheckList();
+                        cadenas.GetComponent<CompteurBoutons>().CheckList();
+                    }
                 }
                 break;
             case "MurUtile" :
                 foreach (var i in charettes)
                 {
-                    i.layer = LayerMask.GetMask("Interactable");
+                    i.layer = LayerMask.NameToLayer("Interactable");
+                    i.GetComponent<Outline>().enabled = true;
                 }
+                break;
+            case "MurInutile" :
+                int temp2 = Random.Range(147, 152);
+                while (temp2 == 148 || temp2 == 151)
+                {
+                    temp2 = Random.Range(147, 152);
+                }
+                /*sousTitres.GetComponent<SoustitresVoices>().ajoutList(temp2);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(temp2, player));*/
                 break;
             case "MauvaiseCharette" :
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(161);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(161, player));
                 allTextEnviro.transform.GetChild(134).gameObject.SetActive(true);
-                gameObject.layer = LayerMask.GetMask("Default");
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                gameObject.GetComponent<Outline>().enabled = false;
                 StartCoroutine(Reactivate(10));
                 break;
             case "BonneCharette" :
@@ -358,6 +499,7 @@ public class Action : MonoBehaviour
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(156);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(156, player));
                 allTextEnviro.transform.GetChild(129).gameObject.SetActive(true);
+                gameObject.GetComponent<Outline>().enabled = false;
                 break;
         }
     }
@@ -369,17 +511,26 @@ public class Action : MonoBehaviour
         yield return null;
     }
     
+    private IEnumerator CanInteract(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        player.GetComponent<PlayerMovement>().canInteract = true;
+        yield return null;
+    }
+    
     private IEnumerator RotationCadenas(float rotationActuelle, float objectif)
     {
         codeInAnim = true;
         float timeElapsed = 0;
         while (timeElapsed < 1) 
         {
-            transform.rotation = Quaternion.Euler(Mathf.Lerp(rotationActuelle,objectif, timeElapsed / 1), transform.rotation.y, 90);
+            //transform.rotation = Quaternion.Euler(Mathf.Lerp(rotationActuelle,objectif, timeElapsed / 1), transform.rotation.y, 90);
+            transform.localRotation = Quaternion.Euler(Mathf.Lerp(rotationActuelle,objectif, timeElapsed / 1), transform.rotation.y, 90);
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        transform.rotation = Quaternion.Euler(objectif, transform.rotation.y, 90);
+        //transform.rotation = Quaternion.Euler(objectif, transform.rotation.y, 90);
+        transform.localRotation = Quaternion.Euler(objectif, transform.rotation.y, 90);
         codeInAnim = false;
     }
 }

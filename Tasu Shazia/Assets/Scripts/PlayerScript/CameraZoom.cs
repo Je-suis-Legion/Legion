@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 
 public class CameraZoom : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public float zoomSpeed = 10;
 
     [SerializeField]
@@ -18,15 +18,48 @@ public class CameraZoom : MonoBehaviour
     private bool isVisble;
     private LensSettings mainCameraSettings;
 
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.GetComponent<Renderer>().shadowCastingMode = ShadowCastingMode.Off;
     }
 
+    //A regler
     private void FixedUpdate()
     {
-        if (isVisble)
+        /*if (gameObject.GetComponent<SpriteRenderer>().isVisible)
+        {
+            Debug.Log(gameObject.name + " " + gameObject.GetComponent<SpriteRenderer>().isVisible);
+            if (player.transform.GetChild(1).GetChild(0).GetComponent<Camera>().fieldOfView > fovMin)
+            {
+                mainCameraSettings = LensSettings.FromCamera(player.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Camera>());
+                player.transform.GetChild(1).GetChild(1).gameObject.GetComponent<CinemachineVirtualCamera>().m_Lens =
+                    new LensSettings(mainCameraSettings.FieldOfView - zoomSpeed * Time.deltaTime,
+                        mainCameraSettings.OrthographicSize,mainCameraSettings.NearClipPlane,
+                        mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
+                //Debug.Log(mainCameraSettings.FieldOfView);
+            }
+        }
+        else
+        {
+            Debug.Log(gameObject.name + " " + gameObject.GetComponent<SpriteRenderer>().isVisible);
+            if (player.transform.GetChild(1).GetChild(0).GetComponent<Camera>().fieldOfView < fovMax)
+            {
+                mainCameraSettings = LensSettings.FromCamera(player.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Camera>());
+                player.transform.GetChild(1).GetChild(1).gameObject.GetComponent<CinemachineVirtualCamera>().m_Lens =
+                    new LensSettings(mainCameraSettings.FieldOfView + zoomSpeed * Time.deltaTime,
+                        mainCameraSettings.OrthographicSize,mainCameraSettings.NearClipPlane,
+                        mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
+                //Debug.Log(mainCameraSettings.FieldOfView);
+            }
+        }
+        
+        /*if (isVisble)
         {
             if (player.transform.GetChild(1).GetChild(0).GetComponent<Camera>().fieldOfView > fovMin)
             {
@@ -49,10 +82,10 @@ public class CameraZoom : MonoBehaviour
                         mainCameraSettings.FarClipPlane,mainCameraSettings.Dutch);
                 //Debug.Log(mainCameraSettings.FieldOfView);
             }
-        }
+        }*/
     }
 
-    private void OnBecameVisible()
+    /*private void OnBecameVisible()
     {
         isVisble = true;
         foreach (var i in listSameEffectObject)
@@ -74,5 +107,5 @@ public class CameraZoom : MonoBehaviour
                 i.GetComponent<CameraZoom>().enabled = true;
             }
         }
-    }
+    }*/
 }

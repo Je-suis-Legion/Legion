@@ -22,7 +22,7 @@ public class CompteurBoutons : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player");
-        zoneDialogue = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(1).gameObject;
+        zoneDialogue = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(2).gameObject;
         allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
 
         foreach (Transform i in transform.GetChild(1))
@@ -71,8 +71,28 @@ public class CompteurBoutons : MonoBehaviour
             allTextEnviro.transform.GetChild(93).gameObject.SetActive(true);
             //Effet sonore de clique ? (deverouillage)
             
-            transform.GetChild(2).GetChild(0).gameObject.layer = LayerMask.GetMask("Default");
-            transform.GetChild(3).GetChild(0).gameObject.layer = LayerMask.GetMask("Default");
+            //transform.GetChild(2).GetChild(0).gameObject.layer = LayerMask.GetMask("Default");
+            //transform.GetChild(3).GetChild(0).gameObject.layer = LayerMask.GetMask("Default");
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(0).GetComponent<Outline>().enabled =
+                false;
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(0).gameObject.layer =
+                LayerMask.NameToLayer("Default");
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(1).GetComponent<Outline>().enabled =
+                false;
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(1).gameObject.layer =
+                LayerMask.NameToLayer("Default");
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(2).GetComponent<Outline>().enabled =
+                false;
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(2).gameObject.layer =
+                LayerMask.NameToLayer("Default");
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(2).GetChild(0).GetComponent<Outline>().enabled =
+                false;
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(2).GetChild(0).gameObject.layer =
+                LayerMask.NameToLayer("Default");
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(3).GetChild(0).GetComponent<Outline>().enabled =
+                false;
+            GameObject.Find("allInteractable").transform.GetChild(6).GetChild(3).GetChild(0).gameObject.layer =
+                LayerMask.NameToLayer("Default");
 
             foreach (var i in listCameraZoom)
             {
