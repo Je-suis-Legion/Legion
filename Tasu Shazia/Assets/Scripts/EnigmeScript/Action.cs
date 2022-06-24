@@ -23,6 +23,7 @@ public class Action : MonoBehaviour
     public List<GameObject> listOdeurRouille = new List<GameObject>();
     public GameObject odeurBarre;
     public GameObject odeurClef;
+    public GameObject odeurMarmitte;
     
     private List<GameObject> allSymbolesVue = new List<GameObject>();
     private bool vuePorteFirst = true;
@@ -95,6 +96,22 @@ public class Action : MonoBehaviour
                 if (listGonds.Count == 0)
                 {
                     gameObject.GetComponent<Animator>().SetBool("Fall",true);
+                    
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = false;
+                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(32);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(32, player));
                     allTextEnviro.transform.GetChild(19).gameObject.SetActive(true);
@@ -175,6 +192,7 @@ public class Action : MonoBehaviour
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(62, player));
                 allTextEnviro.transform.GetChild(49).gameObject.SetActive(true);
                 gameObject.layer = LayerMask.NameToLayer("Default");
+                odeurMarmitte.SetActive(false);
                 gameObject.GetComponent<Outline>().enabled = false;
                 break;
             case "PorteVue" :
@@ -493,7 +511,7 @@ public class Action : MonoBehaviour
                 StartCoroutine(Reactivate(10));
                 break;
             case "BonneCharette" :
-                player.GetComponent<Look>().enabled = false;
+                player.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = false;
                 player.GetComponent<PlayerMovement>().canMove = false;
                 player.GetComponent<PlayerMovement>().canInteract = false;
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(156);
@@ -507,7 +525,7 @@ public class Action : MonoBehaviour
     private IEnumerator Reactivate(float delay)
     {
         yield return new WaitForSeconds(delay);
-        gameObject.layer = LayerMask.GetMask("Interactable");
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
         yield return null;
     }
     

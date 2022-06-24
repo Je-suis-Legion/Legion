@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class TextFinish : MonoBehaviour
@@ -49,12 +51,28 @@ public class TextFinish : MonoBehaviour
             case 5 :
                 //Faire un fade in en noir puis enlever la cinematique
                 canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = true;
-                canvasPlayer.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+                canvasPlayer.transform.GetChild(0).GetChild(0).GetComponent<FadeInOutVideo>().enabled = false;
                 //Enlever la cinematique
                 //couroutine pour attendre 1 seconde
                 StartCoroutine(DelayPlay(6, gameObject, 1));
-                GameObject.Find("===TECH===").transform.GetChild(0).gameObject.SetActive(true);
+                //GameObject.Find("=======UI=======").transform.GetChild(4).gameObject.SetActive(true);
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = true;
+                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = true;
                 //zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(6, player);
+                transform.GetChild(3).GetComponent<AudioSource>().Play();
+                transform.GetChild(4).gameObject.SetActive(true);
                 break;
             case 12 :
                 allTextEnviro.transform.GetChild(0).gameObject.SetActive(true);
@@ -776,7 +794,7 @@ public class TextFinish : MonoBehaviour
                 }
                 break;*/
             case >=152 and <= 155 or
-                160 or 161 :
+                161 :
                 allTextEnviro.transform.GetChild(id - 27).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;
             /*case 153 :
@@ -790,12 +808,13 @@ public class TextFinish : MonoBehaviour
                 break;*/
             case 156 :
                 canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = true;
+                canvasPlayer.transform.GetChild(0).GetChild(3).GetComponent<Image>().enabled = false;
                 allTextEnviro.transform.GetChild(129).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(130).gameObject.SetActive(true);
                 //pop de la cinematique
                 break;
             case 157 :
-                canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = false;
+                //canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = false;
                 allTextEnviro.transform.GetChild(130).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(131).gameObject.SetActive(true);
                 break;
@@ -806,11 +825,17 @@ public class TextFinish : MonoBehaviour
             /*case 159 :
                 allTextEnviro.transform.GetChild(132).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(133).gameObject.SetActive(true);
-                break;
+                break;*/
             case 160 :
                 allTextEnviro.transform.GetChild(133).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                canvasPlayer.transform.GetChild(0).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = true;
+                canvasPlayer.transform.GetChild(0).GetChild(4).gameObject.GetComponent<FadeInOutTextMesh>().enabled = true;
+                canvasPlayer.transform.GetChild(0).GetChild(6).gameObject.GetComponent<FadeInOutTextMesh>().enabled = true;
+                Cursor.lockState = CursorLockMode.None;
+                screenEffectMat.SetFloat("_FullscreenIntensity", 0);
+                StartCoroutine(goBackMenu(6));
                 break;
-            case 161 :
+            /*case 161 :
                 allTextEnviro.transform.GetChild(134).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;*/
         }
@@ -884,5 +909,13 @@ public class TextFinish : MonoBehaviour
         }
         
         mat.SetFloat("_DissolveAmount", endDissolve);
+    }
+
+    private IEnumerator goBackMenu(float delay)
+    {
+        yield return new WaitForSeconds(1);
+        transform.GetChild(3).GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(delay - 1);
+        SceneManager.LoadScene(0);
     }
 }

@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canInteract)
             {
-                if (Input.GetKeyUp(KeyCode.Mouse0))
+                if (Input.GetButtonDown("Interact"))
                 {
                     Debug.Log(hit.collider.name);
                     hit.collider.gameObject.GetComponent<Action>().ActionEffectuer();

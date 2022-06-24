@@ -33,6 +33,7 @@ public class SoustitresVoices : MonoBehaviour
 
     public void ajoutList(int id)
     {
+        Debug.Log("Ajout");
         if (!listLecture.Contains(dialogues.dialogues[id].id))
         {
             int idTemp = id;
@@ -47,11 +48,12 @@ public class SoustitresVoices : MonoBehaviour
 
     public void removeList()
     {
+        Debug.Log("Remove");
         if (listLecture.Count != 0)
         {
             int idTemp = listLecture[0];
             //Tester son fonctionnement
-            StopAllCoroutines();
+            //StopAllCoroutines();
             //
             listLecture.Remove(listLecture[0]);
         
@@ -64,8 +66,10 @@ public class SoustitresVoices : MonoBehaviour
 
     public IEnumerator SoustitreVoice(int id, GameObject objetSonore)
     {
+        Debug.Log("Soutitres");
         if (!isPlaying)
         {
+            Debug.Log("PLaySoustitre");
             isPlaying = true;
             clip = (AudioClip) Resources.Load(dialogues.dialogues[listLecture[0]].path);
             textDuration = clip.length / dialogues.dialogues[listLecture[0]].dialogue.Length;
