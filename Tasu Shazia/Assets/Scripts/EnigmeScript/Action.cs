@@ -101,7 +101,6 @@ public class Action : MonoBehaviour
         switch (gameObject.name)
         {
             case "Gond" :
-                //Son du brisage des gonds
                 GameObject.Find("PorteCellule").GetComponent<Action>().listGonds.Remove(gameObject);
                 Destroy(gameObject);
                 break;
@@ -149,6 +148,7 @@ public class Action : MonoBehaviour
                         i.GetComponent<Outline>().enabled = true;
                     }
                     allInteractable.transform.GetChild(5).GetChild(1).gameObject.layer = LayerMask.NameToLayer("Interactable");
+                    allInteractable.transform.GetChild(5).GetChild(1).gameObject.GetComponent<Outline>().enabled = true;
                     odeurPorteFirts = false;
                 }
                 else
@@ -182,15 +182,18 @@ public class Action : MonoBehaviour
                 }
                 break;
             case "BarreDeFer" :
+                gameObject.GetComponent<AudioSource>().Play();
                 player.GetComponent<PlayerMovement>().distanceInteractions = 10;
                 player.transform.GetChild(1).GetChild(6).gameObject.SetActive(true);
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(51);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(51, player));
                 allTextEnviro.transform.GetChild(38).gameObject.SetActive(true);
                 odeurBarre.SetActive(false);
-                gameObject.SetActive(false);
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<MeshCollider>().enabled = false;
                 break;
             case "Clef" :
+                gameObject.GetComponent<AudioSource>().Play();
                 player.GetComponent<PlayerMovement>().distanceInteractions = 3;
                 player.transform.GetChild(1).GetChild(6).gameObject.SetActive(false);
                 player.transform.GetChild(1).GetChild(7).gameObject.SetActive(true);
@@ -199,7 +202,8 @@ public class Action : MonoBehaviour
                 allTextEnviro.transform.GetChild(43).gameObject.SetActive(true);
                 odeurClef.SetActive(false);
                 transform.parent.GetChild(2).GetChild(2).GetChild(0).GetComponent<Action>().hasClef = true;
-                gameObject.SetActive(false);
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<MeshCollider>().enabled = false;
                 break;
             case "Marmitte" :
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(62);
@@ -298,6 +302,7 @@ public class Action : MonoBehaviour
                 {
                     if (isInteractible && !codeInAnim)
                     {
+                        gameObject.GetComponent<AudioSource>().Play();
                         if (code == codeMax)
                         {
                             code = 1;
@@ -381,6 +386,7 @@ public class Action : MonoBehaviour
                 {
                     if (isInteractible && !codeInAnim)
                     {
+                        gameObject.GetComponent<AudioSource>().Play();
                         if (code == codeMax)
                         {
                             code = 1;
@@ -464,6 +470,7 @@ public class Action : MonoBehaviour
                 {
                     if (isInteractible && !codeInAnim)
                     {
+                        gameObject.GetComponent<AudioSource>().Play();
                         if (code == codeMax)
                         {
                             code = 1;

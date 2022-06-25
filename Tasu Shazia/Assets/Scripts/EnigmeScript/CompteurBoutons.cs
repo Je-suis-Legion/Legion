@@ -62,6 +62,7 @@ public class CompteurBoutons : MonoBehaviour
 
         if (compteur == 3)
         {
+            gameObject.GetComponent<AudioSource>().Play();
             foreach (var i in listBoutton)
             {
                 i.GetComponent<Action>().isInteractible = false;

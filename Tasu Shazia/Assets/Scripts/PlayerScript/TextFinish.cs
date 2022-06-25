@@ -244,10 +244,10 @@ public class TextFinish : MonoBehaviour
                     true;
                 GameObject.Find("allInteractable").transform.GetChild(2).GetChild(2).GetChild(0).gameObject.layer =
                     LayerMask.NameToLayer("Interactable");
-                GameObject.Find("allInteractable").transform.GetChild(5).GetChild(1).GetComponent<Outline>().enabled =
+                /*GameObject.Find("allInteractable").transform.GetChild(5).GetChild(1).GetComponent<Outline>().enabled =
                     true;
                 GameObject.Find("allInteractable").transform.GetChild(5).GetChild(1).gameObject.layer =
-                    LayerMask.NameToLayer("Interactable");
+                    LayerMask.NameToLayer("Interactable");*/
                 animationMaskOdorat.SetActive(true);
                 //animationMaskOdorat.GetComponent<Material>().SetFloat("_DissolveAmount", 1.5f);
                 foreach (var i in listOdaratMat)

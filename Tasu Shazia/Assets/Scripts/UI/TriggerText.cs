@@ -136,6 +136,7 @@ public class TriggerText : MonoBehaviour
                 StartCoroutine(Reactivate(120));
                 break;
             case "Id111 (Trigger du clocher)" :
+                gameObject.GetComponent<AudioSource>().Play();
                 zoneDialogue.GetComponent<SoustitresVoices>().ajoutList(111);
                 StartCoroutine(zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(111, player));
                 //allTextEnviro.transform.GetChild(105).gameObject.SetActive(true);
