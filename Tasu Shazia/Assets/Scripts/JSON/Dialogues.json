@@ -79,7 +79,7 @@
       "color": "jaune",
       "dialogue": "Les ordres du \"Purificateur\" prévalent.",
       "path": "VoicesLines/9",
-      "continuer" : true
+      "continuer" : false
     },
     {
       "id": 10,
@@ -159,7 +159,7 @@
       "color": "bleu",
       "dialogue": "Rien d'étonnant, la plupart des humains ne connaissent pas notre existence.",
       "path": "VoicesLines/19",
-      "continuer" : true
+      "continuer" : false
     },
     {
       "id": 20,
@@ -167,7 +167,7 @@
       "color": "bleu",
       "dialogue": "Après tout, les sciences occultes ne sont pas bien étudiées de nos jours.",
       "path": "VoicesLines/20",
-      "continuer" : true
+      "continuer" : false
     },
     {
       "id": 21,

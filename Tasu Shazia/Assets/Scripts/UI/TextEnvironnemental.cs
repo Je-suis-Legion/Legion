@@ -22,7 +22,7 @@ public class TextEnvironnemental : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(Fade(false));
-        transform.position = GameObject.Find("Player").transform.GetChild(1).GetChild(0).position + GameObject.Find("Player").transform.GetChild(1).GetChild(0).forward * 5;
+        transform.position = GameObject.Find("Player").transform.GetChild(1).GetChild(0).position + GameObject.Find("Player").transform.GetChild(1).GetChild(0).forward * 10;
         transform.rotation = GameObject.Find("Player").transform.GetChild(1).GetChild(0).rotation;
     }
 
@@ -30,6 +30,11 @@ public class TextEnvironnemental : MonoBehaviour
     {
         StartCoroutine(Fade(true));
         gameObject.SetActive(false);
+    }
+
+    private void FixedUpdate()
+    {
+        transform.LookAt(2 * transform.position - GameObject.Find("Player").transform.position);
     }
 
     private Color tradColor(string color)

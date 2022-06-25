@@ -16,9 +16,10 @@ public class Action : MonoBehaviour
 
     private List<GameObject> listGonds = new List<GameObject>();
     private List<GameObject> barreAndKey = new List<GameObject>();
+    private bool doorOutline = true;
     private bool odeurPorteFirts = true;
     private bool hasClef = false;
-    
+
     //A Ameliorer avec un parent commun et des get child
     public List<GameObject> listOdeurRouille = new List<GameObject>();
     public GameObject odeurBarre;
@@ -82,7 +83,19 @@ public class Action : MonoBehaviour
         
         allInteractable.transform.GetChild(2).gameObject.GetComponent<Animator>().speed = 0;
     }
-    
+
+    private void Update()
+    {
+        if (gameObject.name == "PorteCellule")
+        {
+            if (listGonds.Count == 0 && doorOutline)
+            {
+                gameObject.layer = LayerMask.NameToLayer("Interactable");
+                gameObject.GetComponent<Outline>().enabled = true;
+            }
+        }
+    }
+
     public void ActionEffectuer()
     {
         switch (gameObject.name)
@@ -117,6 +130,7 @@ public class Action : MonoBehaviour
                     allTextEnviro.transform.GetChild(19).gameObject.SetActive(true);
                     gameObject.GetComponent<Outline>().enabled = false;
                     gameObject.layer = LayerMask.NameToLayer("Default");
+                    doorOutline = false;
                 }
                 break;
             case "PorteOdeur" :
@@ -206,6 +220,19 @@ public class Action : MonoBehaviour
                     {
                         i.SetActive(true);
                     }
+                    
+                    allSymbolesVue[0].GetComponent<SpriteRenderer>().color = Color.white;
+                    allSymbolesVue[0].transform.GetChild(4).gameObject.SetActive(true);
+                    allSymbolesVue[0].transform.GetChild(5).gameObject.SetActive(true);
+                    allSymbolesVue[0].transform.GetChild(6).gameObject.SetActive(true);
+                    allSymbolesVue[1].GetComponent<SpriteRenderer>().color = Color.white;
+                    allSymbolesVue[1].transform.GetChild(4).gameObject.SetActive(true);
+                    allSymbolesVue[1].transform.GetChild(5).gameObject.SetActive(true);
+                    allSymbolesVue[1].transform.GetChild(6).gameObject.SetActive(true);
+                    allSymbolesVue[2].GetComponent<SpriteRenderer>().color = Color.white;
+                    allSymbolesVue[2].transform.GetChild(4).gameObject.SetActive(true);
+                    allSymbolesVue[2].transform.GetChild(5).gameObject.SetActive(true);
+                    allSymbolesVue[2].transform.GetChild(6).gameObject.SetActive(true);
 
                     transform.parent.parent.GetChild(2).GetChild(0).gameObject.GetComponent<Action>().vuePorteFirst =
                         false;

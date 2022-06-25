@@ -74,12 +74,19 @@ public class TextFinish : MonoBehaviour
                 transform.GetChild(3).GetComponent<AudioSource>().Play();
                 transform.GetChild(4).gameObject.SetActive(true);
                 break;
+            case 9 :
+                StartCoroutine(DelayPlay(12, gameObject, 0.1f));
+                //sousTitres.GetComponent<SoustitresVoices>().ajoutList(12);
+                //StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(12, gameObject));
+                break;
             case 12 :
                 allTextEnviro.transform.GetChild(0).gameObject.SetActive(true);
                 canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = false;
                 gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = true;
                 //couroutine pour attendre 1 seconde
-                StartCoroutine(DelayPlay(13, gameObject, 1));
+                /*sousTitres.GetComponent<SoustitresVoices>().ajoutList(13);
+                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(13, gameObject));*/
+                StartCoroutine(DelayPlay(13, gameObject, 0.1f));
                 //zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(13, player);
                 break;
             /*case 13:
@@ -88,14 +95,16 @@ public class TextFinish : MonoBehaviour
                 break;*/
             case 14 :
                 allTextEnviro.transform.GetChild(1).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(2).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(3).gameObject.SetActive(true);
                 gameObject.GetComponent<PlayerMovement>().canMove = true;
                 //couroutine pour attendre 1 seconde
-                StartCoroutine(DelayPlay(15, gameObject, 1));
+                //sousTitres.GetComponent<SoustitresVoices>().ajoutList(16);
+                //StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(16, gameObject));
+                StartCoroutine(DelayPlay(16, gameObject, 0.1f));
                 //zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(15, player);
                 break;
             case 13 or 
-                >= 15 and <= 29 or 32 or
+                >= 15 and <= 18 or >=21 and <= 29 or 32 or
                 >= 34 and <= 37 or 39 or 40 or
                 >= 42 and <= 45 or
                 >= 47 and <= 49 or
@@ -103,6 +112,13 @@ public class TextFinish : MonoBehaviour
                 72 or 73 :
                 allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
+                break;
+            case 19 :
+                StartCoroutine(DelayPlay(21, gameObject, 0.1f));
+                //sousTitres.GetComponent<SoustitresVoices>().ajoutList(21);
+                //StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(21, gameObject));
+                allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
                 break;
                 /*allTextEnviro.transform.GetChild(2).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(3).gameObject.SetActive(true);
@@ -172,8 +188,6 @@ public class TextFinish : MonoBehaviour
                 GameObject.Find("allInteractable").transform.GetChild(0).GetChild(1).GetComponent<Outline>().enabled =
                     true;
                 GameObject.Find("allInteractable").transform.GetChild(0).GetChild(2).GetComponent<Outline>().enabled =
-                    true;
-                GameObject.Find("allInteractable").transform.GetChild(1).GetChild(0).GetComponent<Outline>().enabled =
                     true;
                 //couroutine pour attendre 1 seconde
                 StartCoroutine(DelayPlay(31, gameObject, 1));
