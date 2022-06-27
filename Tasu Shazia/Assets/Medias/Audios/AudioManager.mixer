@@ -162,6 +162,8 @@ AudioMixerController:
     name: frequenceEffetInGame
   - guid: cd5cf667db6115b4f9eef906f888fb9c
     name: volumeEffetUI
+  - guid: 306be3440715db849b4aa4b3f32beb92
+    name: volumeMaster
   - guid: c963527b8a436f941a0e9531de9b3eac
     name: volumeMusiqueInGame
   - guid: 4219b4f977946924f90ca453c735948a
