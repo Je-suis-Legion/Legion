@@ -67,11 +67,11 @@ public class PlayerMovement : MonoBehaviour
             canvasJoueur.transform.GetChild(0).GetChild(3).localScale = new Vector3(0.02f,0.02f,0.02f);
         }
 
-        if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical"))
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             transform.GetChild(6).GetComponent<AudioSource>().Play();
         }
-        if (Input.GetButtonUp("Horizontal") || Input.GetButtonUp("Vertical"))
+        else
         {
             transform.GetChild(6).GetComponent<AudioSource>().Stop();
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using Random = UnityEngine.Random;
 
 public class TextFinish : MonoBehaviour
@@ -19,8 +20,9 @@ public class TextFinish : MonoBehaviour
     private GameObject animationMaskOuie;
     public List<GameObject> listOuieMat;
     private List<GameObject> listTriggerMaison = new List<GameObject>();
-    private GameObject allTextEnviro;
+    //private GameObject allTextEnviro;
     private GameObject allTriggerText;
+    private VideoClip videoFin;
 
     private void Awake()
     {
@@ -29,8 +31,10 @@ public class TextFinish : MonoBehaviour
         animationMaskOdorat = transform.GetChild(1).GetChild(3).gameObject;
         animationMaskVue = transform.GetChild(1).GetChild(4).gameObject;
         animationMaskOuie = transform.GetChild(1).GetChild(5).gameObject;
-        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
+        //allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
         allTriggerText = GameObject.Find("AllTextTrigger");
+        
+        videoFin = (VideoClip) Resources.Load("Fin");
         
         GameObject.Find("Anim_Chien_Clef").GetComponent<Animator>().speed = 0;
         
@@ -82,7 +86,7 @@ public class TextFinish : MonoBehaviour
                 //StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(12, gameObject));
                 break;
             case 12 :
-                allTextEnviro.transform.GetChild(0).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(0).gameObject.SetActive(true);
                 canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = false;
                 gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = true;
                 //couroutine pour attendre 1 seconde
@@ -96,8 +100,8 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(1).gameObject.SetActive(true);
                 break;*/
             case 14 :
-                allTextEnviro.transform.GetChild(1).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(3).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(1).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(3).gameObject.SetActive(true);
                 gameObject.GetComponent<PlayerMovement>().canMove = true;
                 //couroutine pour attendre 1 seconde
                 //sousTitres.GetComponent<SoustitresVoices>().ajoutList(16);
@@ -112,14 +116,14 @@ public class TextFinish : MonoBehaviour
                 >= 47 and <= 49 or
                 51 or 52 or 54 or 59 or 60 or 63 or 68 or 69 or 71 or
                 72 or 73 :
-                allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
+               // allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
                 break;
             case 19 :
                 StartCoroutine(DelayPlay(21, gameObject, 0.1f));
                 //sousTitres.GetComponent<SoustitresVoices>().ajoutList(21);
                 //StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(21, gameObject));
-                allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 //allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
                 break;
                 /*allTextEnviro.transform.GetChild(2).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -182,8 +186,8 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(17).gameObject.SetActive(true);
                 break;*/
             case 30 :
-                allTextEnviro.transform.GetChild(17).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(18).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(17).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(18).gameObject.SetActive(true);
                 gameObject.GetComponent<PlayerMovement>().canInteract = true;
                 GameObject.Find("allInteractable").transform.GetChild(0).GetChild(0).GetComponent<Outline>().enabled =
                     true;
@@ -200,7 +204,7 @@ public class TextFinish : MonoBehaviour
                 61 or 62 or
                 >= 64 and <= 66 or
                 134:
-                allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;
             /*case 32 :
                 allTextEnviro.transform.GetChild(19).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -241,7 +245,7 @@ public class TextFinish : MonoBehaviour
                 gameObject.GetComponent<PlayerMovement>().canMove = false;
                 gameObject.GetComponent<PlayerMovement>().canInteract = false;
                 gameObject.GetComponent<PlayerMovement>().etatJoueur = EtatJoueur.Odorat;
-                allTextEnviro.transform.GetChild(28).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(28).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 GameObject.Find("allInteractable").transform.GetChild(2).GetChild(2).GetChild(0).GetComponent<Outline>().enabled =
                     true;
                 GameObject.Find("allInteractable").transform.GetChild(2).GetChild(2).GetChild(0).gameObject.layer =
@@ -290,7 +294,7 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(37).gameObject.SetActive(true);
                 break;*/
             case 50 :
-                allTextEnviro.transform.GetChild(37).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(37).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 
                 allTriggerText.transform.GetChild(2).gameObject.SetActive(true);
                 
@@ -299,8 +303,8 @@ public class TextFinish : MonoBehaviour
                 gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = false;
                 gameObject.GetComponent<PlayerMovement>().canMove = false;
                 gameObject.GetComponent<PlayerMovement>().canInteract = false;
-                allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(id - 13).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 12).gameObject.SetActive(true);
                 break;
             /*case 51 :
                 allTextEnviro.transform.GetChild(38).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -377,7 +381,7 @@ public class TextFinish : MonoBehaviour
                 gameObject.GetComponent<PlayerMovement>().canMove = false;
                 gameObject.GetComponent<PlayerMovement>().canInteract = false;*/
                 gameObject.GetComponent<PlayerMovement>().etatJoueur = EtatJoueur.Vue;
-                allTextEnviro.transform.GetChild(57).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(57).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 animationMaskVue.SetActive(true);
                 GameObject.Find("allInteractable").transform.GetChild(6).GetChild(1).GetChild(0).GetComponent<Outline>().enabled =
                     true;
@@ -415,7 +419,7 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(61).gameObject.SetActive(true);
                 break;*/
             case 74 :
-                allTextEnviro.transform.GetChild(61).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(61).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 
                 /*allTriggerText.transform.GetChild(8).gameObject.SetActive(true);
                 allTriggerText.transform.GetChild(9).gameObject.SetActive(true);
@@ -427,44 +431,44 @@ public class TextFinish : MonoBehaviour
                 
                 break;
             case 75 :
-                allTextEnviro.transform.GetChild(62).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(62).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(63).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(64).gameObject.SetActive(true);
-                allTextEnviro.transform.GetChild(65).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(65).gameObject.SetActive(true);*/
                 break;
             case 76 :
-                allTextEnviro.transform.GetChild(64).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(64).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(65).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(66).gameObject.SetActive(true);
-                allTextEnviro.transform.GetChild(67).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(67).gameObject.SetActive(true);*/
                 break;
             case 77 :
-                allTextEnviro.transform.GetChild(66).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(66).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(67).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(68).gameObject.SetActive(true);
-                allTextEnviro.transform.GetChild(69).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(69).gameObject.SetActive(true);*/
                 break;
             case 78 :
-                allTextEnviro.transform.GetChild(68).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(68).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(69).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(70).gameObject.SetActive(true);
-                allTextEnviro.transform.GetChild(71).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(71).gameObject.SetActive(true);*/
                 break;
             case 79 :
-                allTextEnviro.transform.GetChild(70).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(70).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(71).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(72).gameObject.SetActive(true);
-                allTextEnviro.transform.GetChild(73).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(73).gameObject.SetActive(true);*/
                 break;
             case 80 :
-                allTextEnviro.transform.GetChild(72).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(72).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(73).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(74).gameObject.SetActive(true);
-                allTextEnviro.transform.GetChild(75).gameObject.SetActive(true);
+                allTextEnviro.transform.GetChild(75).gameObject.SetActive(true);*/
                 break;
             case 81 :
-                allTextEnviro.transform.GetChild(74).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(75).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                /*allTextEnviro.transform.GetChild(74).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                allTextEnviro.transform.GetChild(75).gameObject.GetComponent<TextEnvironnemental>().Disable();*/
                 break;
             case >=82 and <= 85 or
                 >= 87 and <= 90 or 
@@ -473,8 +477,8 @@ public class TextFinish : MonoBehaviour
                 /*112 or*/ 113 or 114 or
                 >= 115 and <= 118 or
                 120 or 122 or 123 :
-                allTextEnviro.transform.GetChild(id - 6).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(id - 5).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(id - 6).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 5).gameObject.SetActive(true);
                 break;
             /*case 83 :
                 allTextEnviro.transform.GetChild(77).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -489,7 +493,7 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(80).gameObject.SetActive(true);
                 break;*/
             case 86 or 91 or 93 or 94 or 98 or 100 or 102 or 103 or 105 or 109 or 110 or 121 or 124 :
-                allTextEnviro.transform.GetChild(id - 6).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 6).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;
             /*case 87 :
                 allTextEnviro.transform.GetChild(81).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -566,8 +570,8 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(104).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;*/
             case 111 :
-                allTextEnviro.transform.GetChild(105).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(106).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(105).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(106).gameObject.SetActive(true);
                 
                 allTriggerText.transform.GetChild(12).gameObject.SetActive(false);
                 allTriggerText.transform.GetChild(13).gameObject.SetActive(false);
@@ -578,7 +582,7 @@ public class TextFinish : MonoBehaviour
                 gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = false;
                 gameObject.GetComponent<PlayerMovement>().canMove = false;
                 gameObject.GetComponent<PlayerMovement>().canInteract = false;
-                allTextEnviro.transform.GetChild(106).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(106).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 gameObject.GetComponent<PlayerMovement>().etatJoueur = EtatJoueur.Ouie;
                 animationMaskOuie.SetActive(true);
                 //animationMaskOuie.GetComponent<Material>().SetFloat("_DissolveAmount", 1.5f);
@@ -597,7 +601,7 @@ public class TextFinish : MonoBehaviour
                 gameObject.GetComponent<PlayerMovement>().canMove = false;
                 gameObject.GetComponent<PlayerMovement>().canInteract = false;*/
                 //gameObject.GetComponent<PlayerMovement>().etatJoueur = EtatJoueur.Ouie;
-                allTextEnviro.transform.GetChild(108).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(108).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 /*animationMaskOuie.SetActive(true);
                 //animationMaskOuie.GetComponent<Material>().SetFloat("_DissolveAmount", 1.5f);
                 foreach (var i in listOuieMat)
@@ -623,7 +627,7 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(113).gameObject.SetActive(true);
                 break;*/
             case 119 :
-                allTextEnviro.transform.GetChild(113).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(113).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 foreach (var i in listTriggerMaison)
                 {
                     i.SetActive(true);
@@ -652,10 +656,10 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(118).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;*/
             case 125 :
-                allTextEnviro.transform.GetChild(119).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(119).gameObject.SetActive(true);
                 break;
             case 126 :
-                allTextEnviro.transform.GetChild(119).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(119).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;
             case 128 or 135 :
                 temp = Random.Range(152, 154);
@@ -663,32 +667,32 @@ public class TextFinish : MonoBehaviour
                 switch (temp)
                 {
                     case 152 :
-                        allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
                         break;
                     case 153 :
-                        allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
                         break;
                 }
                 break;
             case 131 :
-                allTextEnviro.transform.GetChild(120).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(120).gameObject.SetActive(true);
                 break;
             case 132 :
-                allTextEnviro.transform.GetChild(120).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(120).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 temp = Random.Range(152, 154);
                 StartCoroutine(DelayPlay(temp, gameObject, 1));
                 switch (temp)
                 {
                     case 152 :
-                        allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
                         break;
                     case 153 :
-                        allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
                         break;
                 }
                 break;
             case 133 :
-                allTextEnviro.transform.GetChild(121).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(121).gameObject.SetActive(true);
                 break;
             /*case 134 :
                 allTextEnviro.transform.GetChild(121).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -707,53 +711,53 @@ public class TextFinish : MonoBehaviour
                 }
                 break;*/
             case 138 :
-                allTextEnviro.transform.GetChild(122).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(122).gameObject.SetActive(true);
                 break;
             case 139 :
-                allTextEnviro.transform.GetChild(122).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(122).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 temp = Random.Range(152, 154);
                 StartCoroutine(DelayPlay(temp, gameObject, 1));
                 switch (temp)
                 {
                     case 152 :
-                        allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
                         break;
                     case 153 :
-                        allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
                         break;
                 }
                 break;
             case 141 :
-                allTextEnviro.transform.GetChild(123).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(123).gameObject.SetActive(true);
                 break;
             case 142 :
-                allTextEnviro.transform.GetChild(123).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(123).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 temp = Random.Range(152, 154);
                 StartCoroutine(DelayPlay(temp, gameObject, 1));
                 switch (temp)
                 {
                     case 152 :
-                        allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
                         break;
                     case 153 :
-                        allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
                         break;
                 }
                 break;
             case 145 :
-                allTextEnviro.transform.GetChild(124).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(124).gameObject.SetActive(true);
                 break;
             case 146 :
-                allTextEnviro.transform.GetChild(124).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(124).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 temp = Random.Range(152, 154);
                 StartCoroutine(DelayPlay(temp, gameObject, 1));
                 switch (temp)
                 {
                     case 152 :
-                        allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(125).gameObject.SetActive(true);
                         break;
                     case 153 :
-                        allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(126).gameObject.SetActive(true);
                         break;
                 }
                 break;
@@ -763,10 +767,10 @@ public class TextFinish : MonoBehaviour
                 switch (temp)
                 {
                     case 154 :
-                        allTextEnviro.transform.GetChild(127).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(127).gameObject.SetActive(true);
                         break;
                     case 155 :
-                        allTextEnviro.transform.GetChild(128).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(128).gameObject.SetActive(true);
                         break;
                 }
                 break;
@@ -811,7 +815,7 @@ public class TextFinish : MonoBehaviour
                 break;*/
             case >=152 and <= 155 or
                 161 :
-                allTextEnviro.transform.GetChild(id - 27).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 27).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;
             /*case 153 :
                 allTextEnviro.transform.GetChild(126).gameObject.GetComponent<TextEnvironnemental>().Disable();
@@ -823,27 +827,34 @@ public class TextFinish : MonoBehaviour
                 allTextEnviro.transform.GetChild(128).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 break;*/
             case 156 :
-                canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = true;
+                //canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = true;
+                gameObject.transform.parent.GetChild(7).GetComponent<VideoPlayer>().playbackSpeed = 2f;
+                gameObject.transform.parent.GetChild(7).GetComponent<VideoPlayer>().clip = videoFin;
+                    gameObject.transform.parent.GetChild(7).GetComponent<VideoPlayer>().Play();
+                canvasPlayer.transform.GetChild(0).GetChild(0).GetComponent<FadeInOutVideo>().enabled = true;
+                
                 canvasPlayer.transform.GetChild(0).GetChild(3).GetComponent<Image>().enabled = false;
-                allTextEnviro.transform.GetChild(129).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(130).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(129).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(130).gameObject.SetActive(true);
                 //pop de la cinematique
                 break;
             case 157 :
                 //canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = false;
-                allTextEnviro.transform.GetChild(130).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(131).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(130).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(131).gameObject.SetActive(true);
                 break;
             case 158 or 159 :
-                allTextEnviro.transform.GetChild(id - 27).gameObject.GetComponent<TextEnvironnemental>().Disable();
-                allTextEnviro.transform.GetChild(id - 26).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(id - 27).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(id - 26).gameObject.SetActive(true);
                 break;
             /*case 159 :
                 allTextEnviro.transform.GetChild(132).gameObject.GetComponent<TextEnvironnemental>().Disable();
                 allTextEnviro.transform.GetChild(133).gameObject.SetActive(true);
                 break;*/
             case 160 :
-                allTextEnviro.transform.GetChild(133).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                //allTextEnviro.transform.GetChild(133).gameObject.GetComponent<TextEnvironnemental>().Disable();
+                canvasPlayer.transform.GetChild(0).GetChild(1).GetComponent<FadeInOut>().enabled = true;
+                canvasPlayer.transform.GetChild(0).GetChild(0).GetComponent<FadeInOutVideo>().enabled = false;
                 canvasPlayer.transform.GetChild(0).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = true;
                 canvasPlayer.transform.GetChild(0).GetChild(4).gameObject.GetComponent<FadeInOutTextMesh>().enabled = true;
                 canvasPlayer.transform.GetChild(0).GetChild(6).gameObject.GetComponent<FadeInOutTextMesh>().enabled = true;
@@ -892,7 +903,7 @@ public class TextFinish : MonoBehaviour
         
         sousTitres.GetComponent<SoustitresVoices>().ajoutList(id);
         StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(id, obj));
-        allTextEnviro.transform.GetChild(textEnviroChild).gameObject.SetActive(true);
+        //allTextEnviro.transform.GetChild(textEnviroChild).gameObject.SetActive(true);
         gameObject.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = true;
         gameObject.GetComponent<PlayerMovement>().canMove = true;
         gameObject.GetComponent<PlayerMovement>().canInteract = true;

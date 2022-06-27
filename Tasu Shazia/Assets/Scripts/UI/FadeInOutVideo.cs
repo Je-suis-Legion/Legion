@@ -2,12 +2,23 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
- 
-public class FadeInOutVideo : MonoBehaviour {
+using Unity.VisualScripting;
+
+public class FadeInOutVideo : MonoBehaviour
+{
+    private bool debut = true;
+    private void OnEnable()
+    {
+        if (!debut)
+        {
+            StartCoroutine(FadeImage(false));
+        }
+    }
 
     private void OnDisable()
     {
         StartCoroutine(FadeImage(true));
+        debut = false;
     }
 
     IEnumerator FadeImage(bool fadeAway)

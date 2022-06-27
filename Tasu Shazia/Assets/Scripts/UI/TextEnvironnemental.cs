@@ -14,56 +14,57 @@ public class TextEnvironnemental : MonoBehaviour
 
     private void Awake()
     {
-        dialogues = JsonUtility.FromJson<Dialogues>(json.text);
+        /*dialogues = JsonUtility.FromJson<Dialogues>(json.text);
         gameObject.GetComponent<TextMeshPro>().color = tradColor(dialogues.dialogues[idText].color);
-        gameObject.GetComponent<TextMeshPro>().text = dialogues.dialogues[idText].dialogue;
+        gameObject.GetComponent<TextMeshPro>().text = dialogues.dialogues[idText].dialogue;*/
     }
 
     private void OnEnable()
     {
-        StartCoroutine(Fade(false));
+        /*StartCoroutine(Fade(false));
         transform.position = GameObject.Find("Player").transform.GetChild(1).GetChild(0).position + GameObject.Find("Player").transform.GetChild(1).GetChild(0).forward * 10;
-        transform.rotation = GameObject.Find("Player").transform.GetChild(1).GetChild(0).rotation;
+        transform.rotation = GameObject.Find("Player").transform.GetChild(1).GetChild(0).rotation;*/
     }
 
     public void Disable()
     {
-        StartCoroutine(Fade(true));
-        gameObject.SetActive(false);
+        /*StartCoroutine(Fade(true));
+        gameObject.SetActive(false);*/
     }
 
     private void FixedUpdate()
     {
-        transform.LookAt(2 * transform.position - GameObject.Find("Player").transform.position);
+        //transform.LookAt(2 * transform.position - GameObject.Find("Player").transform.position);
     }
 
     private Color tradColor(string color)
     {
-        Color couleur = Color.black;
+        Color couleur = Color.clear;
 
         switch (color)
         {
-            case "noir" : couleur = Color.black;
+            case "noir" : couleur = Color.clear;
                 break;
-            case "bleu" : couleur = new Color(0.7f,0.7f,1);
+            case "bleu" :
+                couleur = Color.clear;
                 break;
-            case "cyan" : couleur = new Color(0.7f, 1, 1);
+            case "cyan" : couleur = Color.clear;
                 break;
-            case "gris" : couleur = new Color(0.7f,0.7f,0.7f);
+            case "gris" : couleur = Color.clear;
                 break;
-            case "vert" : couleur = new Color(0.7f,1,0.7f);
+            case "vert" : couleur = Color.clear;
                 break;
-            case "rose" : couleur = new Color(1,0.7f,1);
+            case "rose" : couleur = Color.clear;
                 break;
-            case "rouge" : couleur = new Color(1,0.7f,0.7f);
+            case "rouge" : couleur = Color.clear;
                 break;
-            case "blanc" : couleur = Color.white;
+            case "blanc" : couleur = Color.clear;
                 break;
-            case "jaune" : couleur = new Color(1, 1, 0.7f);
+            case "jaune" : couleur = Color.clear;
                 break;
-            case "violet" : couleur = new Color(0.7f, 0.7f, 1);
+            case "violet" : couleur = Color.clear;
                 break;
-            case "orange" : couleur = new Color(255, 69, 0);
+            case "orange" : couleur = Color.clear;
                 break;
         }
 
