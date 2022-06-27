@@ -68,7 +68,7 @@
     {
       "id": 8,
       "name": "Garde 2",
-      "color": "orange",
+      "color": "jaune",
       "dialogue": "Je suis chargé de surveiller ce \"réceptacle\".",
       "path": "VoicesLines/8",
       "continuer" : true
@@ -100,7 +100,7 @@
     {
       "id": 12,
       "name": "Garde 2",
-      "color": "orange",
+      "color": "jaune",
       "dialogue": "Très bien, je te suis.",
       "path": "VoicesLines/12",
       "continuer" : false
@@ -1004,7 +1004,7 @@
     {
       "id": 125,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Je crois bien que Gaspard habite à l'ouest du village.",
       "path": "VoicesLines/125",
       "continuer" : true
@@ -1020,7 +1020,7 @@
     {
       "id": 127,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Tu penses qu'on devrait partir avec lui ?",
       "path": "VoicesLines/127",
       "continuer" : true
@@ -1028,7 +1028,7 @@
     {
       "id": 128,
       "name": "Personne 3",
-      "color": "noir",
+      "color": "jaune",
       "dialogue": "Moi je ne sais pas mais si on veut partir, faudrait déjà aller le voir.",
       "path": "VoicesLines/128",
       "continuer" : false
@@ -1036,7 +1036,7 @@
     {
       "id": 129,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Gaspard est prêt à partir, faut se décider.",
       "path": "VoicesLines/129",
       "continuer" : true
@@ -1044,7 +1044,7 @@
     {
       "id": 130,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Partir mais pour aller où ?",
       "path": "VoicesLines/130",
       "continuer" : true
@@ -1052,7 +1052,7 @@
     {
       "id": 131,
       "name": "Personne 3",
-      "color": "noir",
+      "color": "jaune",
       "dialogue": "Déjà à l'ouest du village pour y rejoindre Gaspard.",
       "path": "VoicesLines/131",
       "continuer" : true
@@ -1084,7 +1084,7 @@
     {
       "id": 135,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Pas de soucis.",
       "path": "VoicesLines/135",
       "continuer" : false
@@ -1100,7 +1100,7 @@
     {
       "id": 137,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Nous partirons comment ?",
       "path": "VoicesLines/137",
       "continuer" : true
@@ -1124,7 +1124,7 @@
     {
       "id": 140,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Pourquoi y-a-t-il une charrette devant chez nous ?",
       "path": "VoicesLines/140",
       "continuer" : true
@@ -1132,7 +1132,7 @@
     {
       "id": 141,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "C'est Gaspard qui l'a garée là l'autre jour.",
       "path": "VoicesLines/141",
       "continuer" : true
@@ -1148,7 +1148,7 @@
     {
       "id": 143,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Gaspard abuse…",
       "path": "VoicesLines/143",
       "continuer" : true
@@ -1156,7 +1156,7 @@
     {
       "id": 144,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Pourquoi ça ?",
       "path": "VoicesLines/144",
       "continuer" : true
@@ -1164,7 +1164,7 @@
     {
       "id": 145,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Il s'est garé juste devant.",
       "path": "VoicesLines/145",
       "continuer" : true
@@ -1180,7 +1180,7 @@
     {
       "id": 147,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "J'ai entendu dire que cette secte qui s'est installée dans l'ancien village faisait des sacrifices.",
       "path": "VoicesLines/147",
       "continuer" : true
@@ -1188,7 +1188,7 @@
     {
       "id": 148,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "L'endroit devient de plus en plus dangereux.",
       "path": "VoicesLines/148",
       "continuer" : false
@@ -1196,7 +1196,7 @@
     {
       "id": 149,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Mon canard a disparu, je suis sûr que c'est un coup de ces fous à l'autre bout du village.",
       "path": "VoicesLines/149",
       "continuer" : false
@@ -1204,7 +1204,7 @@
     {
       "id": 150,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "J'étais allé voir ces gens à l'autre bout du village mais quand je me suis approché j'ai entendu crier.",
       "path": "VoicesLines/150",
       "continuer" : true
@@ -1212,7 +1212,7 @@
     {
       "id": 151,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "On devrait partir, si ça se trouve ce sont des brigands.",
       "path": "VoicesLines/151",
       "continuer" : false

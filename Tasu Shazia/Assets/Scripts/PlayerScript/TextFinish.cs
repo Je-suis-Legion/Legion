@@ -32,6 +32,8 @@ public class TextFinish : MonoBehaviour
         allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
         allTriggerText = GameObject.Find("AllTextTrigger");
         
+        GameObject.Find("Anim_Chien_Clef").GetComponent<Animator>().speed = 0;
+        
         foreach (Transform i in GameObject.Find("allInteractable").transform.GetChild(7))
         {
             listTriggerMaison.Add(i.gameObject);
@@ -56,20 +58,20 @@ public class TextFinish : MonoBehaviour
                 //couroutine pour attendre 1 seconde
                 StartCoroutine(DelayPlay(6, gameObject, 1));
                 //GameObject.Find("=======UI=======").transform.GetChild(4).gameObject.SetActive(true);
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = true;
-                GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = true;
+                /*GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(2).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(3).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(3).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(3).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(4).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = true;
+                GameObject.Find("UIIntra").transform.GetChild(0).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = true;*/
                 //zoneDialogue.GetComponent<SoustitresVoices>().SoustitreVoice(6, player);
                 transform.GetChild(3).GetComponent<AudioSource>().Play();
                 transform.GetChild(4).gameObject.SetActive(true);
