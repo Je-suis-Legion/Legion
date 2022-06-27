@@ -68,7 +68,7 @@
     {
       "id": 8,
       "name": "Garde 2",
-      "color": "orange",
+      "color": "jaune",
       "dialogue": "Je suis chargé de surveiller ce \"réceptacle\".",
       "path": "VoicesLines/8",
       "continuer" : true
@@ -100,7 +100,7 @@
     {
       "id": 12,
       "name": "Garde 2",
-      "color": "orange",
+      "color": "jaune",
       "dialogue": "Très bien, je te suis.",
       "path": "VoicesLines/12",
       "continuer" : false
@@ -108,7 +108,7 @@
     {
       "id": 13,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Eh ! Eh ! Oh !",
       "path": "VoicesLines/13",
       "continuer" : true
@@ -116,7 +116,7 @@
     {
       "id": 14,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Reprends tes esprits gamin !",
       "path": "VoicesLines/14",
       "continuer" : false
@@ -140,7 +140,7 @@
     {
       "id": 17,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Regardez-moi cette tête d'ahuri.",
       "path": "VoicesLines/17",
       "continuer" : true
@@ -148,7 +148,7 @@
     {
       "id": 18,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Il a l'air de rien y comprendre.",
       "path": "VoicesLines/18",
       "continuer" : true
@@ -228,7 +228,7 @@
     {
       "id": 28,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "On pourrait continuer les explications une fois dehors ?",
       "path": "VoicesLines/28",
       "continuer" : true
@@ -236,7 +236,7 @@
     {
       "id": 29,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Faut qu'on parte si on veut pas se faire exorciser.",
       "path": "VoicesLines/29",
       "continuer" : true
@@ -252,7 +252,7 @@
     {
       "id": 31,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Cette porte est très âgée, essaie de voir pour enlever ses gonds.",
       "path": "VoicesLines/31",
       "continuer" : false
@@ -260,7 +260,7 @@
     {
       "id": 32,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Parfait !",
       "path": "VoicesLines/32",
       "continuer" : true
@@ -268,7 +268,7 @@
     {
       "id": 33,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Trouvons un moyen de partir de cet endroit.",
       "path": "VoicesLines/33",
       "continuer" : false
@@ -316,7 +316,7 @@
     {
       "id": 39,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Tiens, cette odeur…",
       "path": "VoicesLines/39",
       "continuer" : true
@@ -324,7 +324,7 @@
     {
       "id": 40,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Un ragoût de rongeurs, quelle nostalgie.",
       "path": "VoicesLines/40",
       "continuer" : true
@@ -332,7 +332,7 @@
     {
       "id": 41,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Je mangeais ça avec mon hôte précédent. Rien de tel que ce repas quand on a pas un sou.",
       "path": "VoicesLines/41",
       "continuer" : false
@@ -340,7 +340,7 @@
     {
       "id": 42,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Ah ! Ah ! J'ai pris le contrôle du corps !",
       "path": "VoicesLines/42",
       "continuer" : true
@@ -372,7 +372,7 @@
     {
       "id": 46,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Bien sûr, plus vite on est parti, mieux je me porterai.",
       "path": "VoicesLines/46",
       "continuer" : false
@@ -380,7 +380,7 @@
     {
       "id": 47,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "On pourrait fuir par là !",
       "path": "VoicesLines/47",
       "continuer" : true
@@ -396,7 +396,7 @@
     {
       "id": 49,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Elle est bien rouillée, la clef doit l'être aussi.",
       "path": "VoicesLines/49",
       "continuer" : true
@@ -404,7 +404,7 @@
     {
       "id": 50,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Voyons où cette odeur de rouille va nous mener.",
       "path": "VoicesLines/50",
       "continuer" : false
@@ -412,7 +412,7 @@
     {
       "id": 51,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Cette barre devrait nous être utile.",
       "path": "VoicesLines/51",
       "continuer" : true
@@ -444,7 +444,7 @@
     {
       "id": 55,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Mais elle est gardée, il nous faudrait quelque chose pour l'attraper d'ici.",
       "path": "VoicesLines/55",
       "continuer" : false
@@ -452,7 +452,7 @@
     {
       "id": 56,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Parfait, on va pouvoir ouvrir cette porte.",
       "path": "VoicesLines/56",
       "continuer" : false
@@ -460,7 +460,7 @@
     {
       "id": 57,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Si je suis cette odeur de rouille, je devrais pouvoir trouver la clef.",
       "path": "VoicesLines/57",
       "continuer" : false
@@ -476,7 +476,7 @@
     {
       "id": 59,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "C'est ouvert !",
       "path": "VoicesLines/59",
       "continuer" : true
@@ -492,7 +492,7 @@
     {
       "id": 61,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Tu sens rien du tout t'es parano !",
       "path": "VoicesLines/61",
       "continuer" : false
@@ -500,7 +500,7 @@
     {
       "id": 62,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Cuisiné dans une marmite rouillée, y a que ça de vrai.",
       "path": "VoicesLines/62",
       "continuer" : false
@@ -516,7 +516,7 @@
     {
       "id": 64,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Ils ne sont plus sensibles à rien, alors l'esthétisme…",
       "path": "VoicesLines/64",
       "continuer" : false
@@ -532,7 +532,7 @@
     {
       "id": 66,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "C'est une impasse.",
       "path": "VoicesLines/66",
       "continuer" : false
@@ -548,7 +548,7 @@
     {
       "id": 68,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Je peux plus bouger.",
       "path": "VoicesLines/68",
       "continuer" : true
@@ -572,7 +572,7 @@
     {
       "id": 71,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Super, le narcissique a le contrôle…",
       "path": "VoicesLines/71",
       "continuer" : true
@@ -604,7 +604,7 @@
     {
       "id": 75,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Cet endroit me rappelle Karovan.",
       "path": "VoicesLines/75",
       "continuer" : true
@@ -652,7 +652,7 @@
     {
       "id": 81,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Parle mieux ! C'était moi leur cible à l'époque !",
       "path": "VoicesLines/81",
       "continuer" : false
@@ -684,7 +684,7 @@
     {
       "id": 85,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Toujours aussi bruyant…",
       "path": "VoicesLines/85",
       "continuer" : true
@@ -700,7 +700,7 @@
     {
       "id": 87,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Encore une porte, et bloquée par un cadenas à code en plus.",
       "path": "VoicesLines/87",
       "continuer" : true
@@ -732,7 +732,7 @@
     {
       "id": 91,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Il y a peut-être un morceau de code dans le coin.",
       "path": "VoicesLines/91",
       "continuer" : false
@@ -756,7 +756,7 @@
     {
       "id": 94,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Inspectons l'endroit, on trouvera peut-être quelque chose.",
       "path": "VoicesLines/94",
       "continuer" : false
@@ -780,7 +780,7 @@
     {
       "id": 97,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Un morceau du code !",
       "path": "VoicesLines/97",
       "continuer" : false
@@ -788,7 +788,7 @@
     {
       "id": 98,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Trouvons d'abord ce code.",
       "path": "VoicesLines/98",
       "continuer" : false
@@ -820,7 +820,7 @@
     {
       "id": 102,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Elles nous permettront peut-être de trouver le code.",
       "path": "VoicesLines/102",
       "continuer" : false
@@ -836,7 +836,7 @@
     {
       "id": 104,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Faudrait se dépêcher.",
       "path": "VoicesLines/104",
       "continuer" : true
@@ -852,7 +852,7 @@
     {
       "id": 106,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Le Cercle risque de nous rattraper à ce rythme.",
       "path": "VoicesLines/106",
       "continuer" : true
@@ -876,7 +876,7 @@
     {
       "id": 109,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Mais ce n'est pas une raison pour traîner.",
       "path": "VoicesLines/109",
       "continuer" : false
@@ -1004,7 +1004,7 @@
     {
       "id": 125,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Je crois bien que Gaspard habite à l'ouest du village.",
       "path": "VoicesLines/125",
       "continuer" : true
@@ -1020,7 +1020,7 @@
     {
       "id": 127,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Tu penses qu'on devrait partir avec lui ?",
       "path": "VoicesLines/127",
       "continuer" : true
@@ -1028,7 +1028,7 @@
     {
       "id": 128,
       "name": "Personne 3",
-      "color": "noir",
+      "color": "jaune",
       "dialogue": "Moi je ne sais pas mais si on veut partir, faudrait déjà aller le voir.",
       "path": "VoicesLines/128",
       "continuer" : false
@@ -1036,7 +1036,7 @@
     {
       "id": 129,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Gaspard est prêt à partir, faut se décider.",
       "path": "VoicesLines/129",
       "continuer" : true
@@ -1044,7 +1044,7 @@
     {
       "id": 130,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Partir mais pour aller où ?",
       "path": "VoicesLines/130",
       "continuer" : true
@@ -1052,7 +1052,7 @@
     {
       "id": 131,
       "name": "Personne 3",
-      "color": "noir",
+      "color": "jaune",
       "dialogue": "Déjà à l'ouest du village pour y rejoindre Gaspard.",
       "path": "VoicesLines/131",
       "continuer" : true
@@ -1084,7 +1084,7 @@
     {
       "id": 135,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Pas de soucis.",
       "path": "VoicesLines/135",
       "continuer" : false
@@ -1100,7 +1100,7 @@
     {
       "id": 137,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Nous partirons comment ?",
       "path": "VoicesLines/137",
       "continuer" : true
@@ -1124,7 +1124,7 @@
     {
       "id": 140,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Pourquoi y-a-t-il une charrette devant chez nous ?",
       "path": "VoicesLines/140",
       "continuer" : true
@@ -1132,7 +1132,7 @@
     {
       "id": 141,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "C'est Gaspard qui l'a garée là l'autre jour.",
       "path": "VoicesLines/141",
       "continuer" : true
@@ -1148,7 +1148,7 @@
     {
       "id": 143,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Gaspard abuse…",
       "path": "VoicesLines/143",
       "continuer" : true
@@ -1156,7 +1156,7 @@
     {
       "id": 144,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Pourquoi ça ?",
       "path": "VoicesLines/144",
       "continuer" : true
@@ -1164,7 +1164,7 @@
     {
       "id": 145,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "Il s'est garé juste devant.",
       "path": "VoicesLines/145",
       "continuer" : true
@@ -1180,7 +1180,7 @@
     {
       "id": 147,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "J'ai entendu dire que cette secte qui s'est installée dans l'ancien village faisait des sacrifices.",
       "path": "VoicesLines/147",
       "continuer" : true
@@ -1188,7 +1188,7 @@
     {
       "id": 148,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "L'endroit devient de plus en plus dangereux.",
       "path": "VoicesLines/148",
       "continuer" : false
@@ -1196,7 +1196,7 @@
     {
       "id": 149,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "Mon canard a disparu, je suis sûr que c'est un coup de ces fous à l'autre bout du village.",
       "path": "VoicesLines/149",
       "continuer" : false
@@ -1204,7 +1204,7 @@
     {
       "id": 150,
       "name": "Personne 1",
-      "color": "gris",
+      "color": "jaune",
       "dialogue": "J'étais allé voir ces gens à l'autre bout du village mais quand je me suis approché j'ai entendu crier.",
       "path": "VoicesLines/150",
       "continuer" : true
@@ -1212,7 +1212,7 @@
     {
       "id": 151,
       "name": "Personne 2",
-      "color": "blanc",
+      "color": "jaune",
       "dialogue": "On devrait partir, si ça se trouve ce sont des brigands.",
       "path": "VoicesLines/151",
       "continuer" : false
@@ -1260,7 +1260,7 @@
     {
       "id": 157,
       "name": "Andras",
-      "color": "violet",
+      "color": "rose",
       "dialogue": "Cachons-nous dedans, ce Gaspard ne nous connaît pas.",
       "path": "VoicesLines/157",
       "continuer" : true

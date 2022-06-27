@@ -66,6 +66,15 @@ public class PlayerMovement : MonoBehaviour
             canvasJoueur.transform.GetChild(0).GetChild(3).GetComponent<Image>().sprite = defaultSprite;
             canvasJoueur.transform.GetChild(0).GetChild(3).localScale = new Vector3(0.02f,0.02f,0.02f);
         }
+
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        {
+            transform.GetChild(6).GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            transform.GetChild(6).GetComponent<AudioSource>().Stop();
+        }
     }
 
     // Update is called once per frame

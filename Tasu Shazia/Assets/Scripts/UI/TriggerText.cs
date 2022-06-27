@@ -9,13 +9,13 @@ public class TriggerText : MonoBehaviour
 {
     private GameObject player;
     private GameObject zoneDialogue;
-    private GameObject allTextEnviro;
+    //private GameObject allTextEnviro;
 
     private void Awake()
     {
         player = GameObject.Find("Player");
         zoneDialogue = GameObject.Find("CanvasPlayer").transform.GetChild(0).GetChild(2).gameObject;
-        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
+        //allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
     }
 
     private void OnEnable()

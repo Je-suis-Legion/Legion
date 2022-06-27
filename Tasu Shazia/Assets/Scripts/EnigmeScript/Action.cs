@@ -11,7 +11,7 @@ public class Action : MonoBehaviour
     private GameObject allInteractable;
     private GameObject canvasPlayer;
     private GameObject sousTitres;
-    private GameObject allTextEnviro;
+    //private GameObject allTextEnviro;
     private GameObject allTriggerText;
 
     private List<GameObject> listGonds = new List<GameObject>();
@@ -44,7 +44,7 @@ public class Action : MonoBehaviour
         player = GameObject.Find("Player");
         allInteractable = GameObject.Find("allInteractable");
         canvasPlayer = GameObject.Find("CanvasPlayer");
-        allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
+        //allTextEnviro = GameObject.Find("AllTextEnvironmentaux");
         sousTitres = canvasPlayer.transform.GetChild(0).GetChild(2).gameObject;
         allTriggerText = GameObject.Find("AllTextTrigger");
 
@@ -109,24 +109,24 @@ public class Action : MonoBehaviour
                 {
                     gameObject.GetComponent<Animator>().SetBool("Fall",true);
                     
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(2).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(3).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = false;
-                    GameObject.Find("=======UI=======").transform.GetChild(4).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    /*GameObject.Find("UIIntra").transform.GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(1).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(2).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(2).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(3).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(3).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(3).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(4).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(4).GetChild(0).gameObject.GetComponent<FadeInOut>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(4).GetChild(1).gameObject.GetComponent<FadeInOutText>().enabled = false;
+                    GameObject.Find("UIIntra").transform.GetChild(0).GetChild(5).gameObject.GetComponent<FadeInOut>().enabled = false;*/
                     
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(32);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(32, player));
-                    allTextEnviro.transform.GetChild(19).gameObject.SetActive(true);
+                    //allTextEnviro.transform.GetChild(19).gameObject.SetActive(true);
                     gameObject.GetComponent<Outline>().enabled = false;
                     gameObject.layer = LayerMask.NameToLayer("Default");
                     doorOutline = false;
@@ -137,7 +137,7 @@ public class Action : MonoBehaviour
                 {
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(47);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(47, player));
-                    allTextEnviro.transform.GetChild(34).gameObject.SetActive(true);
+                    //allTextEnviro.transform.GetChild(34).gameObject.SetActive(true);
                     foreach (var i in listOdeurRouille)
                     {
                         i.SetActive(true);
@@ -157,7 +157,7 @@ public class Action : MonoBehaviour
                     {
                         sousTitres.GetComponent<SoustitresVoices>().ajoutList(59);
                         StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(59, player));
-                        allTextEnviro.transform.GetChild(46).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(46).gameObject.SetActive(true);
                         hasClef = false;
                         player.transform.GetChild(1).GetChild(7).gameObject.SetActive(false);
                         transform.parent.parent.gameObject.GetComponent<Animator>().speed = 1;
@@ -166,16 +166,17 @@ public class Action : MonoBehaviour
                     }
                     else
                     {
+                        gameObject.GetComponent<AudioSource>().Play();
                         int temp = Random.Range(57, 59);
                         sousTitres.GetComponent<SoustitresVoices>().ajoutList(temp);
                         StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(temp, player));
                         switch (temp)
                         {
                             case 57 :
-                                allTextEnviro.transform.GetChild(44).gameObject.SetActive(true);
+                                //allTextEnviro.transform.GetChild(44).gameObject.SetActive(true);
                                 break;
                             case 58 :
-                                allTextEnviro.transform.GetChild(45).gameObject.SetActive(true);
+                                //allTextEnviro.transform.GetChild(45).gameObject.SetActive(true);
                                 break;
                         }
                     }
@@ -187,7 +188,7 @@ public class Action : MonoBehaviour
                 player.transform.GetChild(1).GetChild(6).gameObject.SetActive(true);
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(51);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(51, player));
-                allTextEnviro.transform.GetChild(38).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(38).gameObject.SetActive(true);
                 odeurBarre.SetActive(false);
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
                 gameObject.GetComponent<MeshCollider>().enabled = false;
@@ -196,19 +197,13 @@ public class Action : MonoBehaviour
                 gameObject.GetComponent<AudioSource>().Play();
                 player.GetComponent<PlayerMovement>().distanceInteractions = 3;
                 player.transform.GetChild(1).GetChild(6).gameObject.SetActive(false);
-                player.transform.GetChild(1).GetChild(7).gameObject.SetActive(true);
-                sousTitres.GetComponent<SoustitresVoices>().ajoutList(56);
-                StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(56, player));
-                allTextEnviro.transform.GetChild(43).gameObject.SetActive(true);
                 odeurClef.SetActive(false);
-                transform.parent.GetChild(2).GetChild(2).GetChild(0).GetComponent<Action>().hasClef = true;
-                gameObject.GetComponent<MeshRenderer>().enabled = false;
-                gameObject.GetComponent<MeshCollider>().enabled = false;
+                StartCoroutine(AnimChien());
                 break;
             case "Marmitte" :
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(62);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(62, player));
-                allTextEnviro.transform.GetChild(49).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(49).gameObject.SetActive(true);
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 odeurMarmitte.SetActive(false);
                 gameObject.GetComponent<Outline>().enabled = false;
@@ -219,7 +214,7 @@ public class Action : MonoBehaviour
                 {
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
-                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    //allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
                     foreach (var i in allSymbolesVue)
                     {
                         i.SetActive(true);
@@ -261,9 +256,10 @@ public class Action : MonoBehaviour
                 {
                     if (!goodCode)
                     {
+                        gameObject.GetComponent<AudioSource>().Play();
                         sousTitres.GetComponent<SoustitresVoices>().ajoutList(98);
                         StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(98, player));
-                        allTextEnviro.transform.GetChild(92).gameObject.SetActive(true);
+                        //allTextEnviro.transform.GetChild(92).gameObject.SetActive(true);
                     }
                 }
                 break;
@@ -273,7 +269,7 @@ public class Action : MonoBehaviour
                 {
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
-                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    //allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
                     foreach (var i in allSymbolesVue)
                     {
                         i.SetActive(true);
@@ -357,7 +353,7 @@ public class Action : MonoBehaviour
                 {
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
-                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    //allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
                     foreach (var i in allSymbolesVue)
                     {
                         i.SetActive(true);
@@ -441,7 +437,7 @@ public class Action : MonoBehaviour
                 {
                     sousTitres.GetComponent<SoustitresVoices>().ajoutList(87);
                     StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(87, player));
-                    allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
+                    //allTextEnviro.transform.GetChild(81).gameObject.SetActive(true);
                     foreach (var i in allSymbolesVue)
                     {
                         i.SetActive(true);
@@ -539,7 +535,7 @@ public class Action : MonoBehaviour
             case "MauvaiseCharette" :
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(161);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(161, player));
-                allTextEnviro.transform.GetChild(134).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(134).gameObject.SetActive(true);
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 gameObject.GetComponent<Outline>().enabled = false;
                 StartCoroutine(Reactivate(10));
@@ -550,7 +546,7 @@ public class Action : MonoBehaviour
                 player.GetComponent<PlayerMovement>().canInteract = false;
                 sousTitres.GetComponent<SoustitresVoices>().ajoutList(156);
                 StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(156, player));
-                allTextEnviro.transform.GetChild(129).gameObject.SetActive(true);
+                //allTextEnviro.transform.GetChild(129).gameObject.SetActive(true);
                 gameObject.GetComponent<Outline>().enabled = false;
                 break;
         }
@@ -584,6 +580,29 @@ public class Action : MonoBehaviour
         //transform.rotation = Quaternion.Euler(objectif, transform.rotation.y, 90);
         transform.localRotation = Quaternion.Euler(objectif, transform.rotation.y, 90);
         codeInAnim = false;
+    }
+
+    private IEnumerator AnimChien()
+    {
+        player.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = false;
+        player.GetComponent<PlayerMovement>().canMove = false;
+        player.GetComponent<PlayerMovement>().canInteract = false;
+        GameObject.Find("Anim_Chien_Clef").transform.GetChild(2).gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        GameObject.Find("Anim_Chien_Clef").GetComponent<Animator>().speed = 1;
+        yield return new WaitForSeconds(8.4f);
+        player.transform.GetChild(1).GetChild(0).gameObject.GetComponent<Look>().enabled = true;
+        player.GetComponent<PlayerMovement>().canMove = true;
+        player.GetComponent<PlayerMovement>().canInteract = true;
+        GameObject.Find("Anim_Chien_Clef").transform.GetChild(2).gameObject.SetActive(false);
+        sousTitres.GetComponent<SoustitresVoices>().ajoutList(56);
+        StartCoroutine(sousTitres.GetComponent<SoustitresVoices>().SoustitreVoice(56, player));
+        player.transform.GetChild(1).GetChild(7).gameObject.SetActive(true);
+        //allTextEnviro.transform.GetChild(43).gameObject.SetActive(true);
+        odeurClef.SetActive(false);
+        transform.parent.GetChild(2).GetChild(2).GetChild(0).GetComponent<Action>().hasClef = true;
+        gameObject.GetComponent<MeshCollider>().enabled = false;
+        yield return null;
     }
 }
 
